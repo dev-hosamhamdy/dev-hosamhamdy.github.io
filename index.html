@@ -16,12 +16,11 @@
         --card-header: #fd8b51;
         --button-color-light: #f2e5bf;
         --button-color-dark: #257180;
-
         --secondary-color: #e3f2fd;
-
-        --divider-start: black;
-        --divider-end: white;
+        --divider-start: #000000;
+        --divider-end: #ffffff;
       }
+
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         line-height: 1.6;
@@ -55,12 +54,11 @@
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       }
     </style>
-    <script src="http://0.0.0.0:35729/livereload.js"></script>
   </head>
 
   <body style="background-color: var(--body-color)">
     <nav
-      class="navbar navbar-expand-sm navbar-light shadow-sm sticky-top"
+      class="navbar navbar-expand-md navbar-light shadow-sm sticky-top"
       data-bs-theme="light"
       style="background-color: var(--header-color)"
     >
@@ -101,6 +99,31 @@
 
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="themeDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fa-solid fa-brush" style="color: #63e6be"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="themeDropdown">
+                <li>
+                  <select id="theme-select" class="form-select form-select-sm">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="ocean">Ocean</option>
+                    <option value="solarized">Solarized</option>
+                    <option value="forest">Forest</option>
+                    <option value="sunset">Sunset</option>
+                  </select>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -1262,6 +1285,104 @@
       const tooltipList = [...tooltipTriggerList].map(
         (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
       );
+
+      const themes = {
+        light: {
+          "--header-color": "#333333",
+          "--body-color": "#ffffff",
+          "--card-footer": "#f2f2f2",
+          "--card-header": "#e0e0e0",
+          "--button-color-light": "#ffffff",
+          "--button-color-dark": "#007bff",
+          "--secondary-color": "#f8f9fa",
+          "--divider-start": "#cccccc",
+          "--divider-end": "#eeeeee",
+        },
+        dark: {
+          "--header-color": "#ffffff",
+          "--body-color": "#333333",
+          "--card-footer": "#444444",
+          "--card-header": "#555555",
+          "--button-color-light": "#777777",
+          "--button-color-dark": "#111111",
+          "--secondary-color": "#999999",
+          "--divider-start": "#222222",
+          "--divider-end": "#000000",
+        },
+        ocean: {
+          "--header-color": "#0077b6",
+          "--body-color": "#90e0ef",
+          "--card-footer": "#0077b6",
+          "--card-header": "#00b4d8",
+          "--button-color-light": "#caf0f8",
+          "--button-color-dark": "#023e8a",
+          "--secondary-color": "#ade8f4",
+          "--divider-start": "#03045e",
+          "--divider-end": "#90e0ef",
+        },
+        solarized: {
+          "--header-color": "#268bd2",
+          "--body-color": "#fdf6e3",
+          "--card-footer": "#b58900",
+          "--card-header": "#2aa198",
+          "--button-color-light": "#eee8d5",
+          "--button-color-dark": "#073642",
+          "--secondary-color": "#eee8d5",
+          "--divider-start": "#073642",
+          "--divider-end": "#eee8d5",
+        },
+        forest: {
+          "--header-color": "#228B22",
+          "--body-color": "#eafaf1",
+          "--card-footer": "#196619",
+          "--card-header": "#2e8b57",
+          "--button-color-light": "#d4edda",
+          "--button-color-dark": "#155724",
+          "--secondary-color": "#c3e6cb",
+          "--divider-start": "#146c43",
+          "--divider-end": "#eafaf1",
+        },
+        sunset: {
+          "--header-color": "#ff7e5f",
+          "--body-color": "#feb47b",
+          "--card-footer": "#ff6a88",
+          "--card-header": "#ff5f6d",
+          "--button-color-light": "#ffd1dc",
+          "--button-color-dark": "#b83227",
+          "--secondary-color": "#ffe2e2",
+          "--divider-start": "#b83227",
+          "--divider-end": "#feb47b",
+        },
+      };
+
+      const select = document.getElementById("theme-select");
+
+      function applyTheme(themeName) {
+        const vars = themes[themeName];
+        for (let key in vars) {
+          document.documentElement.style.setProperty(key, vars[key]);
+        }
+      }
+
+      const saved = localStorage.getItem("theme") || "ocean";
+      if (themes[saved]) select.value = saved;
+      applyTheme(select.value);
+
+      select.addEventListener("change", (e) => {
+        const theme = e.target.value;
+        applyTheme(theme);
+        localStorage.setItem("theme", theme);
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggle = document.getElementById("themeDropdown");
+        const ddInstance = bootstrap.Dropdown.getOrCreateInstance(toggle);
+
+        const parentLi = toggle.closest(".dropdown");
+        parentLi.addEventListener("mouseenter", () => {
+          ddInstance.show();
+        });
+      });
     </script>
   </body>
 </html>
