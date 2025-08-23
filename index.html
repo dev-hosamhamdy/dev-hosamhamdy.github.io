@@ -1,1388 +1,899 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hossam Hamdy</title>
 
-    <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="./assets/fontawesome/all.min.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hossam Hamdy</title>
 
-    <style>
-      :root {
-        --header-color: #52bbaf;
-        --body-color: #e9c46a;
-        --card-footer: #cb6040;
-        --card-header: #fd8b51;
-        --button-color-light: #f2e5bf;
-        --button-color-dark: #257180;
-        --secondary-color: #e3f2fd;
-        --divider-start: #000000;
-        --divider-end: #ffffff;
-      }
+  <link rel="stylesheet" href='./assets/bootstrap/bootstrap.min.css' />
+  <link rel="stylesheet" href='./assets/fontawesome/all.min.css' />
 
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-      }
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color, #212529);
+    }
 
-      .section-divider {
-        height: 3px;
-        background: linear-gradient(
-          90deg,
-          var(--header-color) 0%,
-          var(--body-color) 100%
-        );
-        margin: 4rem 0;
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-      }
+    .section-divider {
+      height: 3px;
+      background: linear-gradient(90deg,
+          var(--divider-start) 0%,
+          var(--divider-end) 100%);
+      margin: 4rem 0;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-      .skill-badge {
-        transition: transform 0.2s ease;
-      }
+    .skill-badge {
+      transition: transform 0.2s ease;
+    }
 
-      .skill-badge:hover {
-        transform: translateY(-3px);
-      }
-      .profile-img {
-        height: 220px;
-        width: 220px;
-        object-fit: cover;
-        border: 3px solid #fff;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      }
-    </style>
-  </head>
+    .skill-badge:hover {
+      transform: translateY(-3px);
+    }
 
-  <body style="background-color: var(--body-color)">
-    <nav
-      class="navbar navbar-expand-md navbar-light shadow-sm sticky-top"
-      data-bs-theme="light"
-      style="background-color: var(--header-color)"
-    >
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="#">Hossam Hamdy</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto text-center">
-            <li class="nav-item">
-              <a class="nav-link" href="#intro">Intro</a>
-            </li>
+    .profile-img {
+      height: 220px;
+      width: 220px;
+      object-fit: cover;
+      border: 3px solid #fff;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+  <script src="http://0.0.0.0:35729/livereload.js"></script>
+</head>
 
-            <li class="nav-item">
-              <a class="nav-link" href="#experience">Experience</a>
-            </li>
+<body style="background-color: var(--body-color)">
+  <nav class="navbar navbar-expand-md navbar-light shadow-sm sticky-top" data-bs-theme="light" style="background-color: var(--header-color)">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#" style="color: var(--text-color);">Hossam Hamdy</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto text-center">
 
-            <li class="nav-item">
-              <a class="nav-link" href="#skills">Skills</a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#intro" style="color: var(--text-color);">Intro</a>
+          </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="#projects">Projects</a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#experience" style="color: var(--text-color);">Experience</a>
+          </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="#education">Education</a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills" style="color: var(--text-color);">Skills</a>
+          </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects" style="color: var(--text-color);">Projects</a>
+          </li>
 
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="themeDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <i class="fa-solid fa-brush" style="color: #63e6be"></i>
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="themeDropdown">
-                <li>
-                  <select id="theme-select" class="form-select form-select-sm">
-                    <option value="light">Light</option>
-                    <option value="dark">Dark</option>
-                    <option value="ocean">Ocean</option>
-                    <option value="solarized">Solarized</option>
-                    <option value="forest">Forest</option>
-                    <option value="sunset">Sunset</option>
-                  </select>
-                </li>
-              </ul>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#education" style="color: var(--text-color);">Education</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#contact" style="color: var(--text-color);">Contact</a>
+          </li>
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="themeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-brush" style="color: var(--primary-color)"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="themeDropdown">
+              <li>
+                <select id="theme-select" class="form-select form-select-sm">
+                  <option value="light">Light</option>
+                  <option value="dark">Dark</option>
+
+                </select>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <div class="container py-3">
+    <div id="intro" class="text-center">
+      <div class="row my-3 align-items-center justify-content-center">
+        <div class="col-md-4 mb-3 mb-sm-0 pt-5">
+          <img src="./assets/pic.png" class="img-fluid object-fit-cover border border-3 border-white rounded-circle shadow" alt="Photo of Hossam Hamdy" style="height: 220px" />
+        </div>
+        <div class="col mt-3 pt-5">
+          <p class="">
+            Full-stack developer with dual-domain expertise in software engineering and technical accounting, Specializing in converting complex business needs into efficient technical systems, I design solutions that automate workflows (reducing
+            manual processes by 40-60%) while maintaining simplicity and taking in consideration consumer perspective, With hands-on experience in Django, React, Docker, and PostgreSQL and optimizing collaboration between development and other teams
+            , Continuously expanding my technical toolkit while strengthening team leadership capabilities to deliver strategically aligned solutions
+          </p>
+        </div>
+      </div>
+      <a class="btn rounded-pill px-4 py-2 mt-3 fw-bold" style="background-color: var(--button-color-light)" href="#contact">
+        <i class="fa-solid fa-paper-plane me-2"></i>Contact Me
+      </a>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div id="experience" class="text-center">
+
+      <h3 class="my-3 fw-bold">Work Experience ( Technical )</h3>
+
+      <div class="my-3 card" style="background-color: var(--card-header);color: var(--text-color);">
+        <div class="card-header">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-6 my-1">
+              <h4>Full Stack Developer</h4>
+            </div>
+            <div class="col-md-6 my-1">
+              <time class="fst-italic">11/2023 - Present</time>
+            </div>
+            <div class="col-10 col-md-8 rounded-pill bg-secondary-subtle fw-bold my-1" style="color: var(--reverse-text-color);">
+              PoultrySync
+            </div>
+          </div>
+        </div>
+        <div class="text-start card-body" style="background-color: var(--card-body)">
+          <div class="mt-1">
+            <span class="text-secondary">Responsible for :</span>
+          </div>
+          <ul>
+
+            <li>Optimization, troubleshooting and debugging of system to ensure stability and scalability.</li>
+
+            <li>Designed and implemented custom features aligned with client needs, improving overall user experience.</li>
+
+            <li>Focused on high-level planning and best practices to improve development team efficiently.</li>
+
+            <li>Architected and developed RESTful APIs using Django REST Framework to support seamless integrations.</li>
+
+          </ul>
+        </div>
+        <div class="card-footer text-body-secondary" style="background-color: var(--card-footer)">
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Develop structured plans to streamline workflow and decision-making."
+            data-bs-placement="bottom">Planning</span>
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Handle tasks effectively to balance productivity and efficiency."
+            data-bs-placement="bottom">Workload</span>
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Deliver work on time while maintaining quality standards." data-bs-placement="bottom">Deadlines</span>
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Maintain legacy code to keep old systems running efficiently." data-bs-placement="bottom">Legacy
+            Code</span>
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Improve and restructure code without disrupting business workflows."
+            data-bs-placement="bottom">Refactor</span>
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Collaborate effectively with colleagues to achieve common goals."
+            data-bs-placement="bottom">Teamwork</span>
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Adapt to both remote and in-office work environments seamlessly."
+            data-bs-placement="bottom">Hybrid</span>
+
+        </div>
+      </div>
+
+      <div class="my-3 card" style="background-color: var(--card-header);color: var(--text-color);">
+        <div class="card-header">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-6 my-1">
+              <h4>Backend Developer</h4>
+            </div>
+            <div class="col-md-6 my-1">
+              <time class="fst-italic">10/2022 - 04/2023</time>
+            </div>
+            <div class="col-10 col-md-8 rounded-pill bg-secondary-subtle fw-bold my-1" style="color: var(--reverse-text-color);">
+              Mighty Groups
+            </div>
+          </div>
+        </div>
+        <div class="text-start card-body" style="background-color: var(--card-body)">
+          <div class="mt-1">
+            <span class="text-secondary">Responsible for :</span>
+          </div>
+          <ul>
+
+            <li>Developed RESTful APIs using Django REST Framework.</li>
+
+            <li>Troubleshot, debugged, and enhanced existing systems.</li>
+
+            <li>Implemented custom features to meet project requirements.</li>
+
+            <li>Collaborated with team members to deploy projects successfully.</li>
+
+            <li>Designed ERDs and database schemas in coordination with the business team.</li>
+
+          </ul>
+        </div>
+        <div class="card-footer text-body-secondary" style="background-color: var(--card-footer)">
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Maintain legacy code to keep old systems running efficiently." data-bs-placement="bottom">Legacy
+            Code</span>
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Improve and restructure code without disrupting business workflows."
+            data-bs-placement="bottom">Refactor</span>
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Handle tasks effectively to balance productivity and efficiency."
+            data-bs-placement="bottom">Workload</span>
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Deliver work on time while maintaining quality standards." data-bs-placement="bottom">Deadlines</span>
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Collaborate effectively with colleagues to achieve common goals."
+            data-bs-placement="bottom">Teamwork</span>
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Adapt to both remote and in-office work environments seamlessly."
+            data-bs-placement="bottom">Hybrid</span>
+
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h3 class="my-3 fw-bold">Work Experience ( Non Technical )</h3>
+
+      <div class="my-3 card" style="background-color: var(--card-header);color: var(--text-color);">
+        <div class="card-header">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-6 my-1">
+              <h4>Expenses Accountant Specialist</h4>
+            </div>
+            <div class="col-md-6 my-1">
+              <time class="fst-italic">12/2019 - 03/2022</time>
+            </div>
+            <div class="col-10 col-md-8 rounded-pill bg-secondary-subtle fw-bold my-1" style="color: var(--reverse-text-color);">
+              German Lebanese For Industry (GLC)
+            </div>
+          </div>
+        </div>
+        <div class="text-start card-body" style="background-color: var(--card-body)">
+          <div class="mt-1">
+            <span class="text-secondary">Responsible for :</span>
+          </div>
+          <ul>
+
+            <li>Reviewing general ledger journal entries to the ERP system.</li>
+
+            <li>Prepare and submit weekly/monthly reports.</li>
+
+          </ul>
+        </div>
+        <div class="card-footer text-body-secondary" style="background-color: var(--card-footer)">
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Enhance processes to improve performance and reduce inefficiencies." data-bs-placement="bottom">Workflow
+            Optimizer</span>
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Handle tasks effectively to balance productivity and efficiency."
+            data-bs-placement="bottom">Workload</span>
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Deliver work on time while maintaining quality standards." data-bs-placement="bottom">Deadlines</span>
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Collaborate effectively with colleagues to achieve common goals."
+            data-bs-placement="bottom">Teamwork</span>
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Effectively work and collaborate in an in-office or on-site setting."
+            data-bs-placement="bottom">Office</span>
+
+        </div>
+      </div>
+
+      <div class="my-3 card" style="background-color: var(--card-header);color: var(--text-color);">
+        <div class="card-header">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-6 my-1">
+              <h4>Junior Accountant</h4>
+            </div>
+            <div class="col-md-6 my-1">
+              <time class="fst-italic">10/2018 - 10/2019</time>
+            </div>
+            <div class="col-10 col-md-8 rounded-pill bg-secondary-subtle fw-bold my-1" style="color: var(--reverse-text-color);">
+              KAM Egypt
+            </div>
+          </div>
+        </div>
+        <div class="text-start card-body" style="background-color: var(--card-body)">
+          <div class="mt-1">
+            <span class="text-secondary">Responsible for :</span>
+          </div>
+          <ul>
+
+            <li>Manage all accounting transactions and enter general ledger journal entries to the ERP odoo system.</li>
+
+          </ul>
+        </div>
+        <div class="card-footer text-body-secondary" style="background-color: var(--card-footer)">
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Manage and execute key changes without disrupting operations." data-bs-placement="bottom">Critical
+            Transitions</span>
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Handle tasks effectively to balance productivity and efficiency."
+            data-bs-placement="bottom">Workload</span>
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Maintain structured and efficient task management." data-bs-placement="bottom">Task Organization</span>
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Prioritize and allocate time effectively to meet objectives." data-bs-placement="bottom">Time
+            Management</span>
+
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Effectively work and collaborate in an in-office or on-site setting."
+            data-bs-placement="bottom">Office</span>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div id="skills" class="text-center">
+
+      <h3 class="my-3 fw-bold">Tech Skills</h3>
+      <div class="my-3">
+        <div class="row align-items-center justify-content-center gap-3">
+
+          <div class="col rounded p-1 bg-white">
+            <a href="https://www.python.org/" target="_blank" class="link-underline-opacity-0 link-success">
+              <img style="height: 50px" src="./assets/icons/python.svg" alt="Python" />
+            </a>
+          </div>
+
+          <div class="col rounded p-1 bg-white">
+            <a href="https://www.djangoproject.com/" target="_blank" class="link-underline-opacity-0 link-success">
+              <img style="height: 50px" src="./assets/icons/django.svg" alt="Django" />
+            </a>
+          </div>
+
+          <div class="col rounded p-1 bg-white">
+            <a href="https://www.django-rest-framework.org/" target="_blank" class="link-underline-opacity-0 link-success">
+              <img style="height: 50px" src="./assets/icons/djangorest.png" alt="Django Rest Framework" />
+            </a>
+          </div>
+
+          <div class="col rounded p-1 bg-white">
+            <a href="https://htmx.org/" target="_blank" class="link-underline-opacity-0 link-success">
+              <img style="height: 50px" src="./assets/icons/htmx.png" alt="HTMX" />
+            </a>
+          </div>
+
+          <div class="col rounded p-1 bg-white">
+            <a href="https://www.javascript.com/" target="_blank" class="link-underline-opacity-0 link-success">
+              <img style="height: 50px" src="./assets/icons/js.png" alt="JavaScript" />
+            </a>
+          </div>
+
+          <div class="col rounded p-1 bg-white">
+            <a href="https://react.dev/" target="_blank" class="link-underline-opacity-0 link-success">
+              <img style="height: 50px" src="./assets/icons/react.svg" alt="React" />
+            </a>
+          </div>
+
+          <div class="col rounded p-1 bg-white">
+            <a href="https://html.spec.whatwg.org/" target="_blank" class="link-underline-opacity-0 link-success">
+              <img style="height: 50px" src="./assets/icons/html.png" alt="HTML" />
+            </a>
+          </div>
+
+          <div class="col rounded p-1 bg-white">
+            <a href="https://www.w3.org/Style/CSS/" target="_blank" class="link-underline-opacity-0 link-success">
+              <img style="height: 50px" src="./assets/icons/css.png" alt="CSS" />
+            </a>
+          </div>
+
+          <div class="col rounded p-1 bg-white">
+            <a href="https://getbootstrap.com/" target="_blank" class="link-underline-opacity-0 link-success">
+              <img style="height: 50px" src="./assets/icons/bootstrap.png" alt="Bootstrap" />
+            </a>
+          </div>
+
+          <div class="col rounded p-1 bg-white">
+            <a href="https://www.mysql.com/" target="_blank" class="link-underline-opacity-0 link-success">
+              <img style="height: 50px" src="./assets/icons/mysql.png" alt="MySQL" />
+            </a>
+          </div>
+
+          <div class="col rounded p-1 bg-white">
+            <a href="https://www.postgresql.org/" target="_blank" class="link-underline-opacity-0 link-success">
+              <img style="height: 50px" src="./assets/icons/postgresq.svg" alt="PostgreSQL" />
+            </a>
+          </div>
+
+          <div class="col rounded p-1 bg-white">
+            <a href="https://www.gnu.org/software/bash/" target="_blank" class="link-underline-opacity-0 link-success">
+              <img style="height: 50px" src="./assets/icons/bash.svg" alt="BASH" />
+            </a>
+          </div>
+
+          <div class="col rounded p-1 bg-white">
+            <a href="https://www.odoo.com/" target="_blank" class="link-underline-opacity-0 link-success">
+              <img style="height: 50px" src="./assets/icons/odoo.png" alt="Odoo" />
+            </a>
+          </div>
+
+          <div class="col rounded p-1 bg-white">
+            <a href="https://www.docker.com/" target="_blank" class="link-underline-opacity-0 link-success">
+              <img style="height: 50px" src="./assets/icons/docker.png" alt="Docker" />
+            </a>
+          </div>
+
+          <div class="col rounded p-1 bg-white">
+            <a href="https://git-scm.com/" target="_blank" class="link-underline-opacity-0 link-success">
+              <img style="height: 50px" src="./assets/icons/git.png" alt="Git" />
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="section-divider"></div>
+
+
+      <h3 class="my-3 fw-bold">Skills</h3>
+      <div class="my-3">
+
+        <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Maintain legacy code to keep old systems running efficiently.">Legacy Code</span>
+
+        <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Improve and restructure code without disrupting business workflows.">Refactor</span>
+
+        <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Handle tasks effectively to balance productivity and efficiency.">Workload</span>
+
+        <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Deliver work on time while maintaining quality standards.">Deadlines</span>
+
+        <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Collaborate effectively with colleagues to achieve common goals.">Teamwork</span>
+
+        <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Adapt to both remote and in-office work environments seamlessly.">Hybrid</span>
+
+        <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Develop structured plans to streamline workflow and decision-making.">Planning</span>
+
+        <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Effectively work and collaborate in an in-office or on-site setting.">Office</span>
+
+        <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Enhance processes to improve performance and reduce inefficiencies.">Workflow Optimizer</span>
+
+        <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Manage and execute key changes without disrupting operations.">Critical Transitions</span>
+
+        <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Prioritize and allocate time effectively to meet objectives.">Time Management</span>
+
+        <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Maintain structured and efficient task management.">Task Organization</span>
+
+      </div>
+
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div id="projects" class="text-start">
+
+      <h3 class="my-3 fw-bold">Projects</h3>
+      <div class="row">
+
+        <div class="col-12">
+          <div class="card shadow-sm mb-3" style="background-color: var(--card-header);color: var(--text-color);">
+            <div class="card-header">
+              <h5 class="card-title">Orders Manager</h5>
+            </div>
+
+            <div class="card-body" style="background-color: var(--card-body)">
+              <div class="mb-3">
+
+                <span class="badge" style="background-color: var(--button-color-dark)">Django</span>
+
+                <span class="badge" style="background-color: var(--button-color-dark)">HTMX</span>
+
+              </div>
+              <p class="card-text">If you&#x27;re still collecting food orders manually, it&#x27;s time to try Orders Manager!</p>
+            </div>
+            <div class="card-footer" style="background-color: var(--card-footer)">
+              <div class="row row-cols-auto justify-content-around">
+                <a href="https://github.com/hosamhamdy258/orders-manager" class="btn btn-sm" style="background-color: var(--button-color-light)" target="_blank"><i class="fa-brands fa-github me-2"></i>Code</a>
+                <a href="https://hosamhamdy.koyeb.app/" class="btn btn-sm" style="background-color: var(--button-color-light)" target="_blank"><i class="fa-solid fa-up-right-from-square me-2"></i>Live</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card shadow-sm mb-3" style="background-color: var(--card-header);color: var(--text-color);">
+            <div class="card-header">
+              <h5 class="card-title">Darajaty</h5>
+            </div>
+
+            <div class="card-body" style="background-color: var(--card-body)">
+              <div class="mb-3">
+
+                <span class="badge" style="background-color: var(--button-color-dark)">Django</span>
+
+                <span class="badge" style="background-color: var(--button-color-dark)">React</span>
+
+              </div>
+              <p class="card-text">Tired of boring quizzes? With Darajaty, every question you answer, add, or review comes with rewards! Make learning engaging and fun.</p>
+            </div>
+            <div class="card-footer" style="background-color: var(--card-footer)">
+              <div class="row row-cols-auto justify-content-around">
+                <a href="https://github.com/hosamhamdy258/darajaty" class="btn btn-sm" style="background-color: var(--button-color-light)" target="_blank"><i class="fa-brands fa-github me-2"></i>Code</a>
+                <a href="https://darajaty.pythonanywhere.com/" class="btn btn-sm" style="background-color: var(--button-color-light)" target="_blank"><i class="fa-solid fa-up-right-from-square me-2"></i>Live</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card shadow-sm mb-3" style="background-color: var(--card-header);color: var(--text-color);">
+            <div class="card-header">
+              <h5 class="card-title">Shortener</h5>
+            </div>
+
+            <div class="card-body" style="background-color: var(--card-body)">
+              <div class="mb-3">
+
+                <span class="badge" style="background-color: var(--button-color-dark)">Django</span>
+
+              </div>
+              <p class="card-text">Simple Url Shortener to cut long urls</p>
+            </div>
+            <div class="card-footer" style="background-color: var(--card-footer)">
+              <div class="row row-cols-auto justify-content-around">
+                <a href="https://github.com/hosamhamdy258/shortener" class="btn btn-sm" style="background-color: var(--button-color-light)" target="_blank"><i class="fa-brands fa-github me-2"></i>Code</a>
+                <a href="https://hhshortener.pythonanywhere.com" class="btn btn-sm" style="background-color: var(--button-color-light)" target="_blank"><i class="fa-solid fa-up-right-from-square me-2"></i>Live</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="section-divider"></div>
+    <div id="education" class="text-center">
+
+      <h3 class="my-3 fw-bold">Education</h3>
+
+      <div class="my-3 card" style="background-color: var(--card-header);color: var(--text-color);">
+        <div class="card-header">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-6 my-1">
+              <h4>Full Stack using Python</h4>
+            </div>
+            <div class="col-md-6 my-1">
+              <time class="fst-italic">3/2022 - 9/2022</time>
+            </div>
+            <div class="col-10 col-md-8 rounded-pill bg-secondary-subtle fw-bold my-1" style="color: var(--reverse-text-color);">
+              ITI ( Information Technology Institute )
+            </div>
+          </div>
+        </div>
+        <div class="text-start card-body" style="background-color: var(--card-body)">
+          <div class="mt-1">
+            <span class="text-secondary">Subjects :</span>
+          </div>
+          <ul>
+
+            <li>Programming Fundamentals.</li>
+
+            <li>Intro to Web Development + hands on experience.</li>
+
+            <li>Advanced topics and tips for Web Development optimizations</li>
+
+            <li>Graduation Project + project for every sub track.</li>
+
           </ul>
         </div>
       </div>
-    </nav>
 
-    <div class="container py-3">
-      <div id="intro" class="text-center">
-        <div class="row my-3 align-items-center justify-content-center">
-          <div class="col-md-4 mb-3 mb-sm-0 pt-5">
-            <img
-              src="./assets/pic.png"
-              class="img-fluid object-fit-cover border border-3 border-white rounded-circle shadow"
-              alt="Photo of Hossam Hamdy"
-              style="height: 220px"
-            />
-          </div>
-          <div class="col mt-3 pt-5">
-            <p class="">
-              Full-stack developer with dual-domain expertise in software
-              engineering and technical accounting, Specializing in converting
-              complex business needs into efficient technical systems, I design
-              solutions that automate workflows (reducing manual processes by
-              40-60%) while maintaining simplicity and taking in consideration
-              consumer perspective, With hands-on experience in Django, React,
-              Docker, and PostgreSQL and optimizing collaboration between
-              development and other teams , Continuously expanding my technical
-              toolkit while strengthening team leadership capabilities to
-              deliver strategically aligned solutions
-            </p>
+      <div class="my-3 card" style="background-color: var(--card-header);color: var(--text-color);">
+        <div class="card-header">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-6 my-1">
+              <h4>Bachelor&#x27;s In Accounting</h4>
+            </div>
+            <div class="col-md-6 my-1">
+              <time class="fst-italic">2012 - 2016</time>
+            </div>
+            <div class="col-10 col-md-8 rounded-pill bg-secondary-subtle fw-bold my-1" style="color: var(--reverse-text-color);">
+              Faculty Of Commerce Ain Shams University
+            </div>
           </div>
         </div>
-        <a
-          class="btn rounded-pill px-4 py-2 mt-3 fw-bold"
-          style="background-color: var(--button-color-light)"
-          href="#contact"
-        >
-          <i class="fa-solid fa-paper-plane me-2"></i>Contact Me
-        </a>
-      </div>
-
-      <div class="section-divider"></div>
-
-      <div id="experience" class="text-center">
-        <h3 class="my-3 fw-bold">Work Experience ( Technical )</h3>
-
-        <div class="my-3 card" style="background-color: var(--card-header)">
-          <div class="card-header">
-            <div class="row align-items-center justify-content-center">
-              <div class="col-md-6 my-1">
-                <h4>Full Stack Developer</h4>
-              </div>
-              <div class="col-md-6 my-1">
-                <time class="fst-italic">11/2023 - Present</time>
-              </div>
-              <div
-                class="col-10 col-md-8 rounded-pill bg-secondary-subtle fw-bold my-1"
-              >
-                PoultrySync
-              </div>
-            </div>
+        <div class="text-start card-body" style="background-color: var(--card-body)">
+          <div class="mt-1">
+            <span class="text-secondary">Subjects :</span>
           </div>
-          <div class="text-start card-body bg-white">
-            <div class="mt-1">
-              <span class="text-secondary">Responsible for :</span>
-            </div>
-            <ul>
-              <li>
-                Optimization, troubleshooting and debugging of system to ensure
-                stability and scalability.
-              </li>
+          <ul>
 
-              <li>
-                Designed and implemented custom features aligned with client
-                needs, improving overall user experience.
-              </li>
+            <li>Accounting &amp; Finance.</li>
 
-              <li>
-                Focused on high-level planning and best practices to improve
-                development team efficiently.
-              </li>
+            <li>Business &amp; Management.</li>
 
-              <li>
-                Architected and developed RESTful APIs using Django REST
-                Framework to support seamless integrations.
-              </li>
-            </ul>
-          </div>
-          <div
-            class="card-footer text-body-secondary"
-            style="background-color: var(--card-footer)"
-          >
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Develop structured plans to streamline workflow and decision-making."
-              data-bs-placement="bottom"
-              >Planning</span
-            >
+            <li>Economics.</li>
 
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Handle tasks effectively to balance productivity and efficiency."
-              data-bs-placement="bottom"
-              >Workload</span
-            >
-
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Deliver work on time while maintaining quality standards."
-              data-bs-placement="bottom"
-              >Deadlines</span
-            >
-
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Maintain legacy code to keep old systems running efficiently."
-              data-bs-placement="bottom"
-              >Legacy Code</span
-            >
-
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Improve and restructure code without disrupting business workflows."
-              data-bs-placement="bottom"
-              >Refactor</span
-            >
-
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Collaborate effectively with colleagues to achieve common goals."
-              data-bs-placement="bottom"
-              >Teamwork</span
-            >
-
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Adapt to both remote and in-office work environments seamlessly."
-              data-bs-placement="bottom"
-              >Hybrid</span
-            >
-          </div>
-        </div>
-
-        <div class="my-3 card" style="background-color: var(--card-header)">
-          <div class="card-header">
-            <div class="row align-items-center justify-content-center">
-              <div class="col-md-6 my-1">
-                <h4>Backend Developer</h4>
-              </div>
-              <div class="col-md-6 my-1">
-                <time class="fst-italic">10/2022 - 04/2023</time>
-              </div>
-              <div
-                class="col-10 col-md-8 rounded-pill bg-secondary-subtle fw-bold my-1"
-              >
-                Mighty Groups
-              </div>
-            </div>
-          </div>
-          <div class="text-start card-body bg-white">
-            <div class="mt-1">
-              <span class="text-secondary">Responsible for :</span>
-            </div>
-            <ul>
-              <li>Developed RESTful APIs using Django REST Framework.</li>
-
-              <li>Troubleshot, debugged, and enhanced existing systems.</li>
-
-              <li>Implemented custom features to meet project requirements.</li>
-
-              <li>
-                Collaborated with team members to deploy projects successfully.
-              </li>
-
-              <li>
-                Designed ERDs and database schemas in coordination with the
-                business team.
-              </li>
-            </ul>
-          </div>
-          <div
-            class="card-footer text-body-secondary"
-            style="background-color: var(--card-footer)"
-          >
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Maintain legacy code to keep old systems running efficiently."
-              data-bs-placement="bottom"
-              >Legacy Code</span
-            >
-
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Improve and restructure code without disrupting business workflows."
-              data-bs-placement="bottom"
-              >Refactor</span
-            >
-
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Handle tasks effectively to balance productivity and efficiency."
-              data-bs-placement="bottom"
-              >Workload</span
-            >
-
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Deliver work on time while maintaining quality standards."
-              data-bs-placement="bottom"
-              >Deadlines</span
-            >
-
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Collaborate effectively with colleagues to achieve common goals."
-              data-bs-placement="bottom"
-              >Teamwork</span
-            >
-
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Adapt to both remote and in-office work environments seamlessly."
-              data-bs-placement="bottom"
-              >Hybrid</span
-            >
-          </div>
-        </div>
-
-        <div class="section-divider"></div>
-
-        <h3 class="my-3 fw-bold">Work Experience ( Non Technical )</h3>
-
-        <div class="my-3 card" style="background-color: var(--card-header)">
-          <div class="card-header">
-            <div class="row align-items-center justify-content-center">
-              <div class="col-md-6 my-1">
-                <h4>Expenses Accountant Specialist</h4>
-              </div>
-              <div class="col-md-6 my-1">
-                <time class="fst-italic">12/2019 - 03/2022</time>
-              </div>
-              <div
-                class="col-10 col-md-8 rounded-pill bg-secondary-subtle fw-bold my-1"
-              >
-                German Lebanese For Industry (GLC)
-              </div>
-            </div>
-          </div>
-          <div class="text-start card-body bg-white">
-            <div class="mt-1">
-              <span class="text-secondary">Responsible for :</span>
-            </div>
-            <ul>
-              <li>
-                Reviewing general ledger journal entries to the ERP system.
-              </li>
-
-              <li>Prepare and submit weekly/monthly reports.</li>
-            </ul>
-          </div>
-          <div
-            class="card-footer text-body-secondary"
-            style="background-color: var(--card-footer)"
-          >
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Enhance processes to improve performance and reduce inefficiencies."
-              data-bs-placement="bottom"
-              >Workflow Optimizer</span
-            >
-
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Handle tasks effectively to balance productivity and efficiency."
-              data-bs-placement="bottom"
-              >Workload</span
-            >
-
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Deliver work on time while maintaining quality standards."
-              data-bs-placement="bottom"
-              >Deadlines</span
-            >
-
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Collaborate effectively with colleagues to achieve common goals."
-              data-bs-placement="bottom"
-              >Teamwork</span
-            >
-
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Effectively work and collaborate in an in-office or on-site setting."
-              data-bs-placement="bottom"
-              >Office</span
-            >
-          </div>
-        </div>
-
-        <div class="my-3 card" style="background-color: var(--card-header)">
-          <div class="card-header">
-            <div class="row align-items-center justify-content-center">
-              <div class="col-md-6 my-1">
-                <h4>Junior Accountant</h4>
-              </div>
-              <div class="col-md-6 my-1">
-                <time class="fst-italic">10/2018 - 10/2019</time>
-              </div>
-              <div
-                class="col-10 col-md-8 rounded-pill bg-secondary-subtle fw-bold my-1"
-              >
-                KAM Egypt
-              </div>
-            </div>
-          </div>
-          <div class="text-start card-body bg-white">
-            <div class="mt-1">
-              <span class="text-secondary">Responsible for :</span>
-            </div>
-            <ul>
-              <li>
-                Manage all accounting transactions and enter general ledger
-                journal entries to the ERP odoo system.
-              </li>
-            </ul>
-          </div>
-          <div
-            class="card-footer text-body-secondary"
-            style="background-color: var(--card-footer)"
-          >
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Manage and execute key changes without disrupting operations."
-              data-bs-placement="bottom"
-              >Critical Transitions</span
-            >
-
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Handle tasks effectively to balance productivity and efficiency."
-              data-bs-placement="bottom"
-              >Workload</span
-            >
-
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Maintain structured and efficient task management."
-              data-bs-placement="bottom"
-              >Task Organization</span
-            >
-
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Prioritize and allocate time effectively to meet objectives."
-              data-bs-placement="bottom"
-              >Time Management</span
-            >
-
-            <span
-              class="badge skill-badge text-black"
-              style="background-color: var(--button-color-light)"
-              data-bs-toggle="tooltip"
-              data-bs-title="Effectively work and collaborate in an in-office or on-site setting."
-              data-bs-placement="bottom"
-              >Office</span
-            >
-          </div>
+          </ul>
         </div>
       </div>
 
       <div class="section-divider"></div>
 
-      <div id="skills" class="text-center">
-        <h3 class="my-3 fw-bold">Tech Skills</h3>
-        <div class="my-3">
-          <div class="row align-items-center justify-content-center gap-3">
-            <div class="col rounded p-1 bg-white">
-              <a
-                href="https://www.python.org/"
-                target="_blank"
-                class="link-underline-opacity-0 link-success"
-              >
-                <img
-                  style="height: 50px"
-                  src="./assets/icons/python.svg"
-                  alt="Python"
-                />
-              </a>
-            </div>
+      <h3 class="my-3 fw-bold">Certificates</h3>
 
-            <div class="col rounded p-1 bg-white">
-              <a
-                href="https://www.djangoproject.com/"
-                target="_blank"
-                class="link-underline-opacity-0 link-success"
-              >
-                <img
-                  style="height: 50px"
-                  src="./assets/icons/django.svg"
-                  alt="Django"
-                />
-              </a>
+      <div class="my-3 card" style="background-color: var(--card-header);color: var(--text-color);">
+        <div class="card-header">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-6 my-1">
+              <h4>React Development Cross-Skilling Nanodegree Program</h4>
             </div>
-
-            <div class="col rounded p-1 bg-white">
-              <a
-                href="https://www.django-rest-framework.org/"
-                target="_blank"
-                class="link-underline-opacity-0 link-success"
-              >
-                <img
-                  style="height: 50px"
-                  src="./assets/icons/djangorest.png"
-                  alt="Django Rest Framework"
-                />
-              </a>
+            <div class="col-md-6 my-1">
+              <time class="fst-italic">9/2022 - 11/2022</time>
             </div>
-
-            <div class="col rounded p-1 bg-white">
-              <a
-                href="https://htmx.org/"
-                target="_blank"
-                class="link-underline-opacity-0 link-success"
-              >
-                <img
-                  style="height: 50px"
-                  src="./assets/icons/htmx.png"
-                  alt="HTMX"
-                />
-              </a>
-            </div>
-
-            <div class="col rounded p-1 bg-white">
-              <a
-                href="https://www.javascript.com/"
-                target="_blank"
-                class="link-underline-opacity-0 link-success"
-              >
-                <img
-                  style="height: 50px"
-                  src="./assets/icons/js.png"
-                  alt="JavaScript"
-                />
-              </a>
-            </div>
-
-            <div class="col rounded p-1 bg-white">
-              <a
-                href="https://react.dev/"
-                target="_blank"
-                class="link-underline-opacity-0 link-success"
-              >
-                <img
-                  style="height: 50px"
-                  src="./assets/icons/react.svg"
-                  alt="React"
-                />
-              </a>
-            </div>
-
-            <div class="col rounded p-1 bg-white">
-              <a
-                href="https://html.spec.whatwg.org/"
-                target="_blank"
-                class="link-underline-opacity-0 link-success"
-              >
-                <img
-                  style="height: 50px"
-                  src="./assets/icons/html.png"
-                  alt="HTML"
-                />
-              </a>
-            </div>
-
-            <div class="col rounded p-1 bg-white">
-              <a
-                href="https://www.w3.org/Style/CSS/"
-                target="_blank"
-                class="link-underline-opacity-0 link-success"
-              >
-                <img
-                  style="height: 50px"
-                  src="./assets/icons/css.png"
-                  alt="CSS"
-                />
-              </a>
-            </div>
-
-            <div class="col rounded p-1 bg-white">
-              <a
-                href="https://getbootstrap.com/"
-                target="_blank"
-                class="link-underline-opacity-0 link-success"
-              >
-                <img
-                  style="height: 50px"
-                  src="./assets/icons/bootstrap.png"
-                  alt="Bootstrap"
-                />
-              </a>
-            </div>
-
-            <div class="col rounded p-1 bg-white">
-              <a
-                href="https://www.mysql.com/"
-                target="_blank"
-                class="link-underline-opacity-0 link-success"
-              >
-                <img
-                  style="height: 50px"
-                  src="./assets/icons/mysql.png"
-                  alt="MySQL"
-                />
-              </a>
-            </div>
-
-            <div class="col rounded p-1 bg-white">
-              <a
-                href="https://www.postgresql.org/"
-                target="_blank"
-                class="link-underline-opacity-0 link-success"
-              >
-                <img
-                  style="height: 50px"
-                  src="./assets/icons/postgresq.svg"
-                  alt="PostgreSQL"
-                />
-              </a>
-            </div>
-
-            <div class="col rounded p-1 bg-white">
-              <a
-                href="https://www.gnu.org/software/bash/"
-                target="_blank"
-                class="link-underline-opacity-0 link-success"
-              >
-                <img
-                  style="height: 50px"
-                  src="./assets/icons/bash.svg"
-                  alt="BASH"
-                />
-              </a>
-            </div>
-
-            <div class="col rounded p-1 bg-white">
-              <a
-                href="https://www.odoo.com/"
-                target="_blank"
-                class="link-underline-opacity-0 link-success"
-              >
-                <img
-                  style="height: 50px"
-                  src="./assets/icons/odoo.png"
-                  alt="Odoo"
-                />
-              </a>
-            </div>
-
-            <div class="col rounded p-1 bg-white">
-              <a
-                href="https://www.docker.com/"
-                target="_blank"
-                class="link-underline-opacity-0 link-success"
-              >
-                <img
-                  style="height: 50px"
-                  src="./assets/icons/docker.png"
-                  alt="Docker"
-                />
-              </a>
-            </div>
-
-            <div class="col rounded p-1 bg-white">
-              <a
-                href="https://git-scm.com/"
-                target="_blank"
-                class="link-underline-opacity-0 link-success"
-              >
-                <img
-                  style="height: 50px"
-                  src="./assets/icons/git.png"
-                  alt="Git"
-                />
-              </a>
+            <div class="col-10 col-md-8 rounded-pill bg-secondary-subtle fw-bold my-1" style="color: var(--reverse-text-color);">
+              Udacity
             </div>
           </div>
         </div>
+        <div class="text-start card-body" style="background-color: var(--card-body)">
+          <div class="mt-1">
+            <span class="text-secondary">Subjects :</span>
+          </div>
+          <ul>
 
-        <div class="section-divider"></div>
+            <li>React Fundamentals.</li>
 
-        <h3 class="my-3 fw-bold">Skills</h3>
-        <div class="my-3">
-          <span
-            class="badge skill-badge m-1 p-2"
-            style="background-color: var(--button-color-dark)"
-            data-bs-toggle="tooltip"
-            data-bs-title="Maintain legacy code to keep old systems running efficiently."
-            >Legacy Code</span
-          >
+            <li>Advanced tips and tricks.</li>
 
-          <span
-            class="badge skill-badge m-1 p-2"
-            style="background-color: var(--button-color-dark)"
-            data-bs-toggle="tooltip"
-            data-bs-title="Improve and restructure code without disrupting business workflows."
-            >Refactor</span
-          >
-
-          <span
-            class="badge skill-badge m-1 p-2"
-            style="background-color: var(--button-color-dark)"
-            data-bs-toggle="tooltip"
-            data-bs-title="Handle tasks effectively to balance productivity and efficiency."
-            >Workload</span
-          >
-
-          <span
-            class="badge skill-badge m-1 p-2"
-            style="background-color: var(--button-color-dark)"
-            data-bs-toggle="tooltip"
-            data-bs-title="Deliver work on time while maintaining quality standards."
-            >Deadlines</span
-          >
-
-          <span
-            class="badge skill-badge m-1 p-2"
-            style="background-color: var(--button-color-dark)"
-            data-bs-toggle="tooltip"
-            data-bs-title="Collaborate effectively with colleagues to achieve common goals."
-            >Teamwork</span
-          >
-
-          <span
-            class="badge skill-badge m-1 p-2"
-            style="background-color: var(--button-color-dark)"
-            data-bs-toggle="tooltip"
-            data-bs-title="Adapt to both remote and in-office work environments seamlessly."
-            >Hybrid</span
-          >
-
-          <span
-            class="badge skill-badge m-1 p-2"
-            style="background-color: var(--button-color-dark)"
-            data-bs-toggle="tooltip"
-            data-bs-title="Develop structured plans to streamline workflow and decision-making."
-            >Planning</span
-          >
-
-          <span
-            class="badge skill-badge m-1 p-2"
-            style="background-color: var(--button-color-dark)"
-            data-bs-toggle="tooltip"
-            data-bs-title="Effectively work and collaborate in an in-office or on-site setting."
-            >Office</span
-          >
-
-          <span
-            class="badge skill-badge m-1 p-2"
-            style="background-color: var(--button-color-dark)"
-            data-bs-toggle="tooltip"
-            data-bs-title="Enhance processes to improve performance and reduce inefficiencies."
-            >Workflow Optimizer</span
-          >
-
-          <span
-            class="badge skill-badge m-1 p-2"
-            style="background-color: var(--button-color-dark)"
-            data-bs-toggle="tooltip"
-            data-bs-title="Manage and execute key changes without disrupting operations."
-            >Critical Transitions</span
-          >
-
-          <span
-            class="badge skill-badge m-1 p-2"
-            style="background-color: var(--button-color-dark)"
-            data-bs-toggle="tooltip"
-            data-bs-title="Prioritize and allocate time effectively to meet objectives."
-            >Time Management</span
-          >
-
-          <span
-            class="badge skill-badge m-1 p-2"
-            style="background-color: var(--button-color-dark)"
-            data-bs-toggle="tooltip"
-            data-bs-title="Maintain structured and efficient task management."
-            >Task Organization</span
-          >
+          </ul>
         </div>
       </div>
 
-      <div class="section-divider"></div>
-
-      <div id="projects" class="text-start">
-        <h3 class="my-3 fw-bold">Projects</h3>
-        <div class="row">
-          <div class="col-12">
-            <div
-              class="card shadow-sm mb-3"
-              style="background-color: var(--card-header)"
-            >
-              <div class="card-header">
-                <h5 class="card-title">Orders Manager</h5>
-              </div>
-
-              <div class="card-body bg-white">
-                <div class="mb-3">
-                  <span
-                    class="badge"
-                    style="background-color: var(--button-color-dark)"
-                    >Django</span
-                  >
-
-                  <span
-                    class="badge"
-                    style="background-color: var(--button-color-dark)"
-                    >HTMX</span
-                  >
-                </div>
-                <p class="card-text">
-                  If you&#x27;re still collecting food orders manually,
-                  it&#x27;s time to try Orders Manager!
-                </p>
-              </div>
-              <div
-                class="card-footer"
-                style="background-color: var(--card-footer)"
-              >
-                <div class="row row-cols-auto justify-content-around">
-                  <a
-                    href="https://github.com/hosamhamdy258/orders-manager"
-                    class="btn btn-sm"
-                    style="background-color: var(--button-color-light)"
-                    target="_blank"
-                    ><i class="fa-brands fa-github me-2"></i>Code</a
-                  >
-                  <a
-                    href="https://hosamhamdy.koyeb.app/"
-                    class="btn btn-sm"
-                    style="background-color: var(--button-color-light)"
-                    target="_blank"
-                    ><i class="fa-solid fa-up-right-from-square me-2"></i
-                    >Live</a
-                  >
-                </div>
-              </div>
+      <div class="my-3 card" style="background-color: var(--card-header);color: var(--text-color);">
+        <div class="card-header">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-6 my-1">
+              <h4>Dart &amp; Flutter</h4>
+            </div>
+            <div class="col-md-6 my-1">
+              <time class="fst-italic">5/2020 - 11/2020</time>
+            </div>
+            <div class="col-10 col-md-8 rounded-pill bg-secondary-subtle fw-bold my-1" style="color: var(--reverse-text-color);">
+              IT Share
             </div>
           </div>
-
-          <div class="col-12">
-            <div
-              class="card shadow-sm mb-3"
-              style="background-color: var(--card-header)"
-            >
-              <div class="card-header">
-                <h5 class="card-title">Darajaty</h5>
-              </div>
-
-              <div class="card-body bg-white">
-                <div class="mb-3">
-                  <span
-                    class="badge"
-                    style="background-color: var(--button-color-dark)"
-                    >Django</span
-                  >
-
-                  <span
-                    class="badge"
-                    style="background-color: var(--button-color-dark)"
-                    >React</span
-                  >
-                </div>
-                <p class="card-text">
-                  Tired of boring quizzes? With Darajaty, every question you
-                  answer, add, or review comes with rewards! Make learning
-                  engaging and fun.
-                </p>
-              </div>
-              <div
-                class="card-footer"
-                style="background-color: var(--card-footer)"
-              >
-                <div class="row row-cols-auto justify-content-around">
-                  <a
-                    href="https://github.com/hosamhamdy258/darajaty"
-                    class="btn btn-sm"
-                    style="background-color: var(--button-color-light)"
-                    target="_blank"
-                    ><i class="fa-brands fa-github me-2"></i>Code</a
-                  >
-                  <a
-                    href="https://darajaty.pythonanywhere.com/"
-                    class="btn btn-sm"
-                    style="background-color: var(--button-color-light)"
-                    target="_blank"
-                    ><i class="fa-solid fa-up-right-from-square me-2"></i
-                    >Live</a
-                  >
-                </div>
-              </div>
-            </div>
+        </div>
+        <div class="text-start card-body" style="background-color: var(--card-body)">
+          <div class="mt-1">
+            <span class="text-secondary">Subjects :</span>
           </div>
+          <ul>
 
-          <div class="col-12">
-            <div
-              class="card shadow-sm mb-3"
-              style="background-color: var(--card-header)"
-            >
-              <div class="card-header">
-                <h5 class="card-title">Shortener</h5>
-              </div>
+            <li>Dart &amp; Flutter Fundamentals.</li>
 
-              <div class="card-body bg-white">
-                <div class="mb-3">
-                  <span
-                    class="badge"
-                    style="background-color: var(--button-color-dark)"
-                    >Django</span
-                  >
-                </div>
-                <p class="card-text">Simple Url Shortener to cut long urls</p>
-              </div>
-              <div
-                class="card-footer"
-                style="background-color: var(--card-footer)"
-              >
-                <div class="row row-cols-auto justify-content-around">
-                  <a
-                    href="https://github.com/hosamhamdy258/shortener"
-                    class="btn btn-sm"
-                    style="background-color: var(--button-color-light)"
-                    target="_blank"
-                    ><i class="fa-brands fa-github me-2"></i>Code</a
-                  >
-                  <a
-                    href="https://hhshortener.pythonanywhere.com"
-                    class="btn btn-sm"
-                    style="background-color: var(--button-color-light)"
-                    target="_blank"
-                    ><i class="fa-solid fa-up-right-from-square me-2"></i
-                    >Live</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
+            <li>4 Hands on projects.</li>
+
+          </ul>
         </div>
       </div>
 
-      <div class="section-divider"></div>
-      <div id="education" class="text-center">
-        <h3 class="my-3 fw-bold">Education</h3>
-
-        <div class="my-3 card" style="background-color: var(--card-header)">
-          <div class="card-header">
-            <div class="row align-items-center justify-content-center">
-              <div class="col-md-6 my-1">
-                <h4>Full Stack using Python</h4>
-              </div>
-              <div class="col-md-6 my-1">
-                <time class="fst-italic">3/2022 - 9/2022</time>
-              </div>
-              <div
-                class="col-10 col-md-8 rounded-pill bg-secondary-subtle fw-bold my-1"
-              >
-                ITI ( Information Technology Institute )
-              </div>
+      <div class="my-3 card" style="background-color: var(--card-header);color: var(--text-color);">
+        <div class="card-header">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-6 my-1">
+              <h4>Professional Financial Accountant</h4>
             </div>
-          </div>
-          <div class="text-start card-body bg-white">
-            <div class="mt-1">
-              <span class="text-secondary">Subjects :</span>
+            <div class="col-md-6 my-1">
+              <time class="fst-italic">5/2018 - 9/2018</time>
             </div>
-            <ul>
-              <li>Programming Fundamentals.</li>
-
-              <li>Intro to Web Development + hands on experience.</li>
-
-              <li>
-                Advanced topics and tips for Web Development optimizations
-              </li>
-
-              <li>Graduation Project + project for every sub track.</li>
-            </ul>
+            <div class="col-10 col-md-8 rounded-pill bg-secondary-subtle fw-bold my-1" style="color: var(--reverse-text-color);">
+              Cairo University
+            </div>
           </div>
         </div>
-
-        <div class="my-3 card" style="background-color: var(--card-header)">
-          <div class="card-header">
-            <div class="row align-items-center justify-content-center">
-              <div class="col-md-6 my-1">
-                <h4>Bachelor&#x27;s In Accounting</h4>
-              </div>
-              <div class="col-md-6 my-1">
-                <time class="fst-italic">2012 - 2016</time>
-              </div>
-              <div
-                class="col-10 col-md-8 rounded-pill bg-secondary-subtle fw-bold my-1"
-              >
-                Faculty Of Commerce Ain Shams University
-              </div>
-            </div>
+        <div class="text-start card-body" style="background-color: var(--card-body)">
+          <div class="mt-1">
+            <span class="text-secondary">Subjects :</span>
           </div>
-          <div class="text-start card-body bg-white">
-            <div class="mt-1">
-              <span class="text-secondary">Subjects :</span>
-            </div>
-            <ul>
-              <li>Accounting &amp; Finance.</li>
+          <ul>
 
-              <li>Business &amp; Management.</li>
+            <li>Advanced Accounting.</li>
 
-              <li>Economics.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="section-divider"></div>
-
-        <h3 class="my-3 fw-bold">Certificates</h3>
-
-        <div class="my-3 card" style="background-color: var(--card-header)">
-          <div class="card-header">
-            <div class="row align-items-center justify-content-center">
-              <div class="col-md-6 my-1">
-                <h4>React Development Cross-Skilling Nanodegree Program</h4>
-              </div>
-              <div class="col-md-6 my-1">
-                <time class="fst-italic">9/2022 - 11/2022</time>
-              </div>
-              <div
-                class="col-10 col-md-8 rounded-pill bg-secondary-subtle fw-bold my-1"
-              >
-                Udacity
-              </div>
-            </div>
-          </div>
-          <div class="text-start card-body bg-white">
-            <div class="mt-1">
-              <span class="text-secondary">Subjects :</span>
-            </div>
-            <ul>
-              <li>React Fundamentals.</li>
-
-              <li>Advanced tips and tricks.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="my-3 card" style="background-color: var(--card-header)">
-          <div class="card-header">
-            <div class="row align-items-center justify-content-center">
-              <div class="col-md-6 my-1">
-                <h4>Dart &amp; Flutter</h4>
-              </div>
-              <div class="col-md-6 my-1">
-                <time class="fst-italic">5/2020 - 11/2020</time>
-              </div>
-              <div
-                class="col-10 col-md-8 rounded-pill bg-secondary-subtle fw-bold my-1"
-              >
-                IT Share
-              </div>
-            </div>
-          </div>
-          <div class="text-start card-body bg-white">
-            <div class="mt-1">
-              <span class="text-secondary">Subjects :</span>
-            </div>
-            <ul>
-              <li>Dart &amp; Flutter Fundamentals.</li>
-
-              <li>4 Hands on projects.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="my-3 card" style="background-color: var(--card-header)">
-          <div class="card-header">
-            <div class="row align-items-center justify-content-center">
-              <div class="col-md-6 my-1">
-                <h4>Professional Financial Accountant</h4>
-              </div>
-              <div class="col-md-6 my-1">
-                <time class="fst-italic">5/2018 - 9/2018</time>
-              </div>
-              <div
-                class="col-10 col-md-8 rounded-pill bg-secondary-subtle fw-bold my-1"
-              >
-                Cairo University
-              </div>
-            </div>
-          </div>
-          <div class="text-start card-body bg-white">
-            <div class="mt-1">
-              <span class="text-secondary">Subjects :</span>
-            </div>
-            <ul>
-              <li>Advanced Accounting.</li>
-            </ul>
-          </div>
+          </ul>
         </div>
       </div>
 
-      <div class="section-divider"></div>
-      <div id="contact" class="text-center">
-        <h3 class="my-3 fw-bold">Contact Information</h3>
-        <div class="row align-items-center justify-content-center">
-          <div
-            class="col-10 col-md-5 card m-1"
-            style="background-color: var(--button-color-light)"
-          >
-            <a
-              href="tel:+201015434803"
-              class="link-underline link-underline-opacity-0"
-            >
-              <i
-                class="fa-solid fa-phone fa-2xl m-5"
-                style="color: #1ae03e"
-              ></i>
-              <br />
-              <span class="text-break text-black">+20-101-543-4803</span>
-            </a>
-          </div>
-
-          <div
-            class="col-10 col-md-5 card m-1"
-            style="background-color: var(--button-color-light)"
-          >
-            <a
-              href="mailto:hosamhamdy258@gmail.com"
-              class="link-underline link-underline-opacity-0"
-            >
-              <i
-                class="fa-solid fa-envelope fa-2xl m-5"
-                style="color: #a82a2a"
-              ></i>
-              <br />
-              <span class="text-break text-black">hosamhamdy258@gmail.com</span>
-            </a>
-          </div>
-
-          <div
-            class="col-10 col-md-5 card m-1"
-            style="background-color: var(--button-color-light)"
-          >
-            <a
-              href="https://github.com/hosamhamdy258"
-              class="link-underline link-underline-opacity-0"
-            >
-              <i
-                class="fa-brands fa-github fa-2xl m-5"
-                style="color: #000000"
-              ></i>
-              <br />
-              <span class="text-break text-black"
-                >github.com/hosamhamdy258</span
-              >
-            </a>
-          </div>
-
-          <div
-            class="col-10 col-md-5 card m-1"
-            style="background-color: var(--button-color-light)"
-          >
-            <a
-              href="https://www.linkedin.com/in/hossamhamdy94/"
-              class="link-underline link-underline-opacity-0"
-            >
-              <i
-                class="fa-brands fa-linkedin fa-2xl m-5"
-                style="color: #0a66c2"
-              ></i>
-              <br />
-              <span class="text-break text-black"
-                >linkedin.com/in/hossamhamdy94</span
-              >
-            </a>
-          </div>
-
-          <div
-            class="col-10 col-md-5 card m-1"
-            style="background-color: var(--button-color-light)"
-          >
-            <a
-              href="https://dev-hosamhamdy.github.io"
-              class="link-underline link-underline-opacity-0"
-            >
-              <i
-                class="fa-solid fa-globe fa-2xl m-5"
-                style="color: #63e6be"
-              ></i>
-              <br />
-              <span class="text-break text-black"
-                >dev-hosamhamdy.github.io</span
-              >
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
 
-    <footer class="py-4 bg-black bg-opacity-25 text-center my-3">
-      <div>
-        <small>&copy; Hossam Hamdy 2025. All rights reserved.</small>
+    <div class="section-divider"></div>
+    <div id="contact" class="text-center">
+
+      <h3 class="my-3 fw-bold">Contact Information</h3>
+      <div class="row align-items-center justify-content-center">
+
+        <div class="col-10 col-md-5 card m-1" style="background-color: var(--card-header);">
+          <a href="tel:+201015434803" class="link-underline link-underline-opacity-0" style="color: var(--text-color);">
+            <i class="fa-solid fa-phone fa-2xl m-5" style="color: #1ae03e;"></i>
+            <br />
+            <span class="text-break">+20-101-543-4803</span>
+          </a>
+        </div>
+
+        <div class="col-10 col-md-5 card m-1" style="background-color: var(--card-header);">
+          <a href="mailto:hosamhamdy258@gmail.com" class="link-underline link-underline-opacity-0" style="color: var(--text-color);">
+            <i class="fa-solid fa-envelope fa-2xl m-5" style="color: #a82a2a;"></i>
+            <br />
+            <span class="text-break">hosamhamdy258@gmail.com</span>
+          </a>
+        </div>
+
+        <div class="col-10 col-md-5 card m-1" style="background-color: var(--card-header);">
+          <a href="https://github.com/hosamhamdy258" class="link-underline link-underline-opacity-0" style="color: var(--text-color);">
+            <i class="fa-brands fa-github fa-2xl m-5" style="color: #000000;;"></i>
+            <br />
+            <span class="text-break">github.com/hosamhamdy258</span>
+          </a>
+        </div>
+
+        <div class="col-10 col-md-5 card m-1" style="background-color: var(--card-header);">
+          <a href="https://www.linkedin.com/in/hossamhamdy94/" class="link-underline link-underline-opacity-0" style="color: var(--text-color);">
+            <i class="fa-brands fa-linkedin fa-2xl m-5" style="color: #0a66c2;"></i>
+            <br />
+            <span class="text-break">linkedin.com/in/hossamhamdy94</span>
+          </a>
+        </div>
+
+        <div class="col-10 col-md-5 card m-1" style="background-color: var(--card-header);">
+          <a href="https://dev-hosamhamdy.github.io" class="link-underline link-underline-opacity-0" style="color: var(--text-color);">
+            <i class="fa-solid fa-globe fa-2xl m-5" style="color: #63E6BE;"></i>
+            <br />
+            <span class="text-break">dev-hosamhamdy.github.io</span>
+          </a>
+        </div>
+
       </div>
-    </footer>
 
-    <script src="./assets/bootstrap/bootstrap.min.js"></script>
-    <script>
-      const tooltipTriggerList = document.querySelectorAll(
-        '[data-bs-toggle="tooltip"]'
-      );
-      const tooltipList = [...tooltipTriggerList].map(
-        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
-      );
+    </div>
+  </div>
 
-      const themes = {
-        light: {
-          "--header-color": "#333333",
-          "--body-color": "#ffffff",
-          "--card-footer": "#f2f2f2",
-          "--card-header": "#e0e0e0",
-          "--button-color-light": "#ffffff",
-          "--button-color-dark": "#007bff",
-          "--secondary-color": "#f8f9fa",
-          "--divider-start": "#cccccc",
-          "--divider-end": "#eeeeee",
-        },
-        dark: {
-          "--header-color": "#ffffff",
-          "--body-color": "#333333",
-          "--card-footer": "#444444",
-          "--card-header": "#555555",
-          "--button-color-light": "#777777",
-          "--button-color-dark": "#111111",
-          "--secondary-color": "#999999",
-          "--divider-start": "#222222",
-          "--divider-end": "#000000",
-        },
-        ocean: {
-          "--header-color": "#0077b6",
-          "--body-color": "#90e0ef",
-          "--card-footer": "#0077b6",
-          "--card-header": "#00b4d8",
-          "--button-color-light": "#caf0f8",
-          "--button-color-dark": "#023e8a",
-          "--secondary-color": "#ade8f4",
-          "--divider-start": "#03045e",
-          "--divider-end": "#90e0ef",
-        },
-        solarized: {
-          "--header-color": "#268bd2",
-          "--body-color": "#fdf6e3",
-          "--card-footer": "#b58900",
-          "--card-header": "#2aa198",
-          "--button-color-light": "#eee8d5",
-          "--button-color-dark": "#073642",
-          "--secondary-color": "#eee8d5",
-          "--divider-start": "#073642",
-          "--divider-end": "#eee8d5",
-        },
-        forest: {
-          "--header-color": "#228B22",
-          "--body-color": "#eafaf1",
-          "--card-footer": "#196619",
-          "--card-header": "#2e8b57",
-          "--button-color-light": "#d4edda",
-          "--button-color-dark": "#155724",
-          "--secondary-color": "#c3e6cb",
-          "--divider-start": "#146c43",
-          "--divider-end": "#eafaf1",
-        },
-        sunset: {
-          "--header-color": "#ff7e5f",
-          "--body-color": "#feb47b",
-          "--card-footer": "#ff6a88",
-          "--card-header": "#ff5f6d",
-          "--button-color-light": "#ffd1dc",
-          "--button-color-dark": "#b83227",
-          "--secondary-color": "#ffe2e2",
-          "--divider-start": "#b83227",
-          "--divider-end": "#feb47b",
-        },
-      };
+  <footer class="py-4 bg-black bg-opacity-25 text-center my-3">
+    <div>
+      <small>&copy; Hossam Hamdy 2025. All rights reserved.</small>
+    </div>
+  </footer>
 
-      const select = document.getElementById("theme-select");
+  <script src="./assets/bootstrap/bootstrap.min.js"></script>
+  <script>
+    const tooltipTriggerList = document.querySelectorAll(
+      '[data-bs-toggle="tooltip"]'
+    );
+    const tooltipList = [...tooltipTriggerList].map(
+      (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+    );
 
-      function applyTheme(themeName) {
-        const vars = themes[themeName];
-        for (let key in vars) {
-          document.documentElement.style.setProperty(key, vars[key]);
-        }
+    const themes = {
+      light: {
+        "--header-color": "#e9ecef",
+        "--body-color": "#f8f9fa",
+        "--card-header": "#ffffff",
+        "--card-body": "#ffffff",
+        "--card-footer": "#f1f3f5",
+        "--button-color-light": "#f2e5bf",
+        "--button-color-dark": "#6c757d",
+        "--secondary-color": "#e3f2fd",
+        "--divider-start": "#0d6efd",
+        "--divider-end": "#6c757d",
+        "--text-color": "#000000",
+        "--reverse-text-color": "#000000",
+        "--secondary-text-color": "#6c757d",
+        "--primary-text-color": "#212529",
+        "--badge-bg-color": "#198754",
+        "--badge-text-color": "#ffffff",
+        "--navbar-text-color": "#212529",
+        "--link-color": "#0d6efd",
+        "--border-color": "#dee2e6",
+        "--success-color": "#198754",
+        "--primary-color": "#0d6efd",
+      },
+      dark: {
+        "--header-color": "#1f2937",
+        "--body-color": "#111827",
+        "--card-header": "#213e6f",
+        "--card-body": "#000000",
+        "--card-footer": "#374151",
+        "--button-color-light": "#7cacff",
+        "--button-color-dark": "#2b6cb0",
+        "--secondary-color": "#4a5568",
+        "--divider-start": "#b5d0ff",
+        "--divider-end": "#133062",
+        "--text-color": "#ffffff",
+        "--reverse-text-color": "#000000",
+        "--secondary-text-color": "#a0aec0",
+        "--primary-text-color": "#f7fafc",
+        "--badge-bg-color": "#2b6cb0",
+        "--badge-text-color": "#ffffff",
+        "--navbar-text-color": "#f7fafc",
+        "--link-color": "#60a5fa",
+        "--border-color": "#4a5568",
+        "--success-color": "#10b981",
+        "--primary-color": "#3b82f6",
+      },
+      /*
+      ocean: {
+        "--header-color": "#0077b6",
+        "--body-color": "#90e0ef",
+        "--card-footer": "#0077b6",
+        "--card-header": "#00b4d8",
+        "--button-color-light": "#caf0f8",
+        "--button-color-dark": "#023e8a",
+        "--secondary-color": "#ade8f4",
+        "--divider-start": "#03045e",
+        "--divider-end": "#90e0ef",
+      },
+      solarized: {
+        "--header-color": "#268bd2",
+        "--body-color": "#fdf6e3",
+        "--card-footer": "#b58900",
+        "--card-header": "#2aa198",
+        "--button-color-light": "#eee8d5",
+        "--button-color-dark": "#073642",
+        "--secondary-color": "#eee8d5",
+        "--divider-start": "#073642",
+        "--divider-end": "#eee8d5",
+      },
+      forest: {
+        "--header-color": "#228B22",
+        "--body-color": "#eafaf1",
+        "--card-footer": "#196619",
+        "--card-header": "#2e8b57",
+        "--button-color-light": "#d4edda",
+        "--button-color-dark": "#155724",
+        "--secondary-color": "#c3e6cb",
+        "--divider-start": "#146c43",
+        "--divider-end": "#eafaf1",
+      },
+      sunset: {
+        "--header-color": "#ff7e5f",
+        "--body-color": "#feb47b",
+        "--card-footer": "#ff6a88",
+        "--card-header": "#ff5f6d",
+        "--button-color-light": "#ffd1dc",
+        "--button-color-dark": "#b83227",
+        "--secondary-color": "#ffe2e2",
+        "--divider-start": "#b83227",
+        "--divider-end": "#feb47b",
+      },
+      */
+    };
+
+    const select = document.getElementById("theme-select");
+
+    function applyTheme(themeName) {
+      const vars = themes[themeName];
+      for (let key in vars) {
+        document.documentElement.style.setProperty(key, vars[key]);
       }
+    }
 
-      const saved = localStorage.getItem("theme") || "ocean";
-      if (themes[saved]) select.value = saved;
-      applyTheme(select.value);
+    const saved = localStorage.getItem("theme") || "light";
+    if (themes[saved]) select.value = saved;
+    applyTheme(select.value);
 
-      select.addEventListener("change", (e) => {
-        const theme = e.target.value;
-        applyTheme(theme);
-        localStorage.setItem("theme", theme);
+    select.addEventListener("change", (e) => {
+      const theme = e.target.value;
+      applyTheme(theme);
+      localStorage.setItem("theme", theme);
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.getElementById("themeDropdown");
+      const ddInstance = bootstrap.Dropdown.getOrCreateInstance(toggle);
+
+      const parentLi = toggle.closest(".dropdown");
+      parentLi.addEventListener("mouseenter", () => {
+        ddInstance.show();
       });
+    });
+  </script>
+</body>
 
-      document.addEventListener("DOMContentLoaded", () => {
-        const toggle = document.getElementById("themeDropdown");
-        const ddInstance = bootstrap.Dropdown.getOrCreateInstance(toggle);
-
-        const parentLi = toggle.closest(".dropdown");
-        parentLi.addEventListener("mouseenter", () => {
-          ddInstance.show();
-        });
-      });
-    </script>
-  </body>
 </html>
