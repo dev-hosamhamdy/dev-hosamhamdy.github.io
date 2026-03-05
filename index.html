@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,10 +11,25 @@
   <link rel="stylesheet" href='./assets/fontawesome/all.min.css' />
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
       line-height: 1.6;
       color: var(--text-color, #212529);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .card {
+      border: 1px solid var(--border-color) !important;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1) !important;
     }
 
     .section-divider {
@@ -28,58 +44,80 @@
     }
 
     .skill-badge {
-      transition: transform 0.2s ease;
+      transition: all 0.2s ease;
+      cursor: default;
     }
 
     .skill-badge:hover {
-      transform: translateY(-3px);
+      transform: scale(1.1);
+      filter: brightness(1.1);
     }
 
-    .profile-img {
-      height: 220px;
-      width: 220px;
-      object-fit: cover;
-      border: 3px solid #fff;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    .tech-card {
+      transition: all 0.3s ease;
+    }
+
+    .tech-card:hover {
+      border-color: var(--primary-color) !important;
+      transform: rotate(3deg) scale(1.05);
+    }
+
+    .contact-card {
+      transition: all 0.3s ease;
+      text-decoration: none !important;
+    }
+
+    .contact-card:hover {
+      background-color: var(--body-color) !important;
+    }
+
+    .contact-card:hover i {
+      transform: scale(1.2);
+    }
+
+    .contact-card i {
+      transition: transform 0.3s ease;
     }
   </style>
-  <script src="http://0.0.0.0:35729/livereload.js"></script>
 </head>
 
 <body style="background-color: var(--body-color)">
   <nav class="navbar navbar-expand-md navbar-light shadow-sm sticky-top" data-bs-theme="light" style="background-color: var(--header-color)">
     <div class="container">
       <a class="navbar-brand fw-bold" href="#" style="color: var(--text-color);">Hossam Hamdy</a>
+      <a href="./assets/Hossam_Hamdy_Ibrahim.pdf" download class="btn btn-sm fw-bold" style="background-color: var(--button-color-light); color: var(--text-color);" title="Download CV">
+        <i class="fa-solid fa-file-pdf me-2"></i>Download
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto text-center">
-
+          
           <li class="nav-item">
             <a class="nav-link" href="#intro" style="color: var(--text-color);">Intro</a>
           </li>
-
+          
           <li class="nav-item">
             <a class="nav-link" href="#experience" style="color: var(--text-color);">Experience</a>
           </li>
-
+          
           <li class="nav-item">
             <a class="nav-link" href="#skills" style="color: var(--text-color);">Skills</a>
           </li>
-
+          
           <li class="nav-item">
             <a class="nav-link" href="#projects" style="color: var(--text-color);">Projects</a>
           </li>
-
+          
           <li class="nav-item">
             <a class="nav-link" href="#education" style="color: var(--text-color);">Education</a>
           </li>
-
+          
           <li class="nav-item">
             <a class="nav-link" href="#contact" style="color: var(--text-color);">Contact</a>
           </li>
-
+          
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="themeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -90,14 +128,13 @@
                 <select id="theme-select" class="form-select form-select-sm">
                   <option value="light">Light</option>
                   <option value="dark">Dark</option>
-
+                  
                 </select>
               </li>
             </ul>
           </li>
         </ul>
       </div>
-
     </div>
   </nav>
 
@@ -109,10 +146,11 @@
         </div>
         <div class="col mt-3 pt-5">
           <p class="">
-            Full-stack developer with dual-domain expertise in software engineering and technical accounting, Specializing in converting complex business needs into efficient technical systems, I design solutions that automate workflows (reducing
-            manual processes by 40-60%) while maintaining simplicity and taking in consideration consumer perspective, With hands-on experience in Django, React, Docker, and PostgreSQL and optimizing collaboration between development and other teams
-            , Continuously expanding my technical toolkit while strengthening team leadership capabilities to deliver strategically aligned solutions
-          </p>
+Backed-focused Software Engineer with leadership experience, specializing in designing scalable systems that translate complex business requirements into reliable, production-ready solutions.
+Experienced in building and optimizing high-performance APIs using Django &amp; Django REST Framework, working with PostgreSQL/​MySQL, and developing containerized applications using Docker.
+Strong advocate of Agile practices, clean architecture, and delivery-driven development. Focused on performance optimization, system reliability, and aligning technical decisions with real business impact.
+Continuously evolving toward system architecture while strengthening technical leadership and cross-team collaboration.
+</p>
         </div>
       </div>
       <a class="btn rounded-pill px-4 py-2 mt-3 fw-bold" style="background-color: var(--button-color-light)" href="#contact">
@@ -123,9 +161,74 @@
     <div class="section-divider"></div>
 
     <div id="experience" class="text-center">
-
+      
       <h3 class="my-3 fw-bold">Work Experience ( Technical )</h3>
-
+      
+      <div class="my-3 card" style="background-color: var(--card-header);color: var(--text-color);">
+        <div class="card-header">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-6 my-1">
+              <h4>Backend Developer</h4>
+            </div>
+            <div class="col-md-6 my-1">
+              <time class="fst-italic">12/2025 - Present</time>
+            </div>
+            <div class="col-10 col-md-8 rounded-pill bg-secondary-subtle fw-bold my-1" style="color: var(--reverse-text-color);">
+              Holouly
+            </div>
+          </div>
+        </div>
+        <div class="text-start card-body" style="background-color: var(--card-body)">
+          <div class="mt-1">
+            <span class="text-secondary">Responsible for :</span>
+          </div>
+          <ul>
+            
+            <li>Contribute to scalable back-end systems using Python and Django ecosystem.</li>
+            
+            <li>Embrace Agile methodologies (Scrum/​Kanban) to ensure iterative and value-driven delivery.</li>
+            
+            <li>Collaborate cross-functionally with product and front-end teams to deliver business-aligned features.</li>
+            
+            <li>Manage containerized applications using Docker and Kubernetes (K8s).</li>
+            
+            <li>Supporting deploy and monitor services in container orchestration environments to ensure high availability.</li>
+            
+            <li>Follow structured delivery pipelines to improve deployment reliability and reduce manual intervention.</li>
+            
+            <li>Optimize system performance, scalability, and fault tolerance.</li>
+            
+            <li>Participate in code reviews and enforce best practices for maintainability and clean architecture.</li>
+            
+            <li>Support production environments with proactive monitoring and incident resolution.</li>
+            
+          </ul>
+        </div>
+        <div class="card-footer text-body-secondary" style="background-color: var(--card-footer)">
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Design and build systems that grow efficiently with business needs." data-bs-placement="bottom">Scalability</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Deliver value through iterative development and collaborative workflows." data-bs-placement="bottom">Agile</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Ensure code quality and knowledge sharing through thorough peer reviews." data-bs-placement="bottom">Code Reviewer</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Take full responsibility for features from conception to production support." data-bs-placement="bottom">Ownership</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Manage containerized environments and automated delivery pipelines." data-bs-placement="bottom">DevOps</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Enhance processes to improve performance and reduce inefficiencies." data-bs-placement="bottom">Workflow Optimizer</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Develop structured plans to streamline workflow and decision-making." data-bs-placement="bottom">Planning</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Improve and restructure code without disrupting business workflows." data-bs-placement="bottom">Refactor</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Collaborate effectively with colleagues to achieve common goals." data-bs-placement="bottom">Teamwork</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Adapt to both remote and in-office work environments seamlessly." data-bs-placement="bottom">Hybrid</span>
+          
+        </div>
+      </div>
+      
       <div class="my-3 card" style="background-color: var(--card-header);color: var(--text-color);">
         <div class="card-header">
           <div class="row align-items-center justify-content-center">
@@ -133,7 +236,7 @@
               <h4>Full Stack Developer</h4>
             </div>
             <div class="col-md-6 my-1">
-              <time class="fst-italic">11/2023 - Present</time>
+              <time class="fst-italic">11/2023 - 12/2025</time>
             </div>
             <div class="col-10 col-md-8 rounded-pill bg-secondary-subtle fw-bold my-1" style="color: var(--reverse-text-color);">
               PoultrySync
@@ -145,42 +248,42 @@
             <span class="text-secondary">Responsible for :</span>
           </div>
           <ul>
-
+            
             <li>Optimization, troubleshooting and debugging of system to ensure stability and scalability.</li>
-
+            
             <li>Designed and implemented custom features aligned with client needs, improving overall user experience.</li>
-
+            
             <li>Focused on high-level planning and best practices to improve development team efficiently.</li>
-
+            
             <li>Architected and developed RESTful APIs using Django REST Framework to support seamless integrations.</li>
-
+            
           </ul>
         </div>
         <div class="card-footer text-body-secondary" style="background-color: var(--card-footer)">
-
-          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Develop structured plans to streamline workflow and decision-making."
-            data-bs-placement="bottom">Planning</span>
-
-          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Handle tasks effectively to balance productivity and efficiency."
-            data-bs-placement="bottom">Workload</span>
-
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Develop structured plans to streamline workflow and decision-making." data-bs-placement="bottom">Planning</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Enhance processes to improve performance and reduce inefficiencies." data-bs-placement="bottom">Workflow Optimizer</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Take full responsibility for features from conception to production support." data-bs-placement="bottom">Ownership</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Design and build systems that grow efficiently with business needs." data-bs-placement="bottom">Scalability</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Handle tasks effectively to balance productivity and efficiency." data-bs-placement="bottom">Workload</span>
+          
           <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Deliver work on time while maintaining quality standards." data-bs-placement="bottom">Deadlines</span>
-
-          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Maintain legacy code to keep old systems running efficiently." data-bs-placement="bottom">Legacy
-            Code</span>
-
-          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Improve and restructure code without disrupting business workflows."
-            data-bs-placement="bottom">Refactor</span>
-
-          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Collaborate effectively with colleagues to achieve common goals."
-            data-bs-placement="bottom">Teamwork</span>
-
-          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Adapt to both remote and in-office work environments seamlessly."
-            data-bs-placement="bottom">Hybrid</span>
-
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Maintain legacy code to keep old systems running efficiently." data-bs-placement="bottom">Legacy Code</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Improve and restructure code without disrupting business workflows." data-bs-placement="bottom">Refactor</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Collaborate effectively with colleagues to achieve common goals." data-bs-placement="bottom">Teamwork</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Adapt to both remote and in-office work environments seamlessly." data-bs-placement="bottom">Hybrid</span>
+          
         </div>
       </div>
-
+      
       <div class="my-3 card" style="background-color: var(--card-header);color: var(--text-color);">
         <div class="card-header">
           <div class="row align-items-center justify-content-center">
@@ -200,45 +303,44 @@
             <span class="text-secondary">Responsible for :</span>
           </div>
           <ul>
-
+            
             <li>Developed RESTful APIs using Django REST Framework.</li>
-
+            
             <li>Troubleshot, debugged, and enhanced existing systems.</li>
-
+            
             <li>Implemented custom features to meet project requirements.</li>
-
+            
             <li>Collaborated with team members to deploy projects successfully.</li>
-
+            
             <li>Designed ERDs and database schemas in coordination with the business team.</li>
-
+            
           </ul>
         </div>
         <div class="card-footer text-body-secondary" style="background-color: var(--card-footer)">
-
-          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Maintain legacy code to keep old systems running efficiently." data-bs-placement="bottom">Legacy
-            Code</span>
-
-          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Improve and restructure code without disrupting business workflows."
-            data-bs-placement="bottom">Refactor</span>
-
-          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Handle tasks effectively to balance productivity and efficiency."
-            data-bs-placement="bottom">Workload</span>
-
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Enhance processes to improve performance and reduce inefficiencies." data-bs-placement="bottom">Workflow Optimizer</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Take full responsibility for features from conception to production support." data-bs-placement="bottom">Ownership</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Maintain legacy code to keep old systems running efficiently." data-bs-placement="bottom">Legacy Code</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Improve and restructure code without disrupting business workflows." data-bs-placement="bottom">Refactor</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Handle tasks effectively to balance productivity and efficiency." data-bs-placement="bottom">Workload</span>
+          
           <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Deliver work on time while maintaining quality standards." data-bs-placement="bottom">Deadlines</span>
-
-          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Collaborate effectively with colleagues to achieve common goals."
-            data-bs-placement="bottom">Teamwork</span>
-
-          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Adapt to both remote and in-office work environments seamlessly."
-            data-bs-placement="bottom">Hybrid</span>
-
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Collaborate effectively with colleagues to achieve common goals." data-bs-placement="bottom">Teamwork</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Adapt to both remote and in-office work environments seamlessly." data-bs-placement="bottom">Hybrid</span>
+          
         </div>
       </div>
-
+       
       <div class="section-divider"></div>
-
+       
       <h3 class="my-3 fw-bold">Work Experience ( Non Technical )</h3>
-
+      
       <div class="my-3 card" style="background-color: var(--card-header);color: var(--text-color);">
         <div class="card-header">
           <div class="row align-items-center justify-content-center">
@@ -258,32 +360,28 @@
             <span class="text-secondary">Responsible for :</span>
           </div>
           <ul>
-
+            
             <li>Reviewing general ledger journal entries to the ERP system.</li>
-
+            
             <li>Prepare and submit weekly/monthly reports.</li>
-
+            
           </ul>
         </div>
         <div class="card-footer text-body-secondary" style="background-color: var(--card-footer)">
-
-          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Enhance processes to improve performance and reduce inefficiencies." data-bs-placement="bottom">Workflow
-            Optimizer</span>
-
-          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Handle tasks effectively to balance productivity and efficiency."
-            data-bs-placement="bottom">Workload</span>
-
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Enhance processes to improve performance and reduce inefficiencies." data-bs-placement="bottom">Workflow Optimizer</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Handle tasks effectively to balance productivity and efficiency." data-bs-placement="bottom">Workload</span>
+          
           <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Deliver work on time while maintaining quality standards." data-bs-placement="bottom">Deadlines</span>
-
-          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Collaborate effectively with colleagues to achieve common goals."
-            data-bs-placement="bottom">Teamwork</span>
-
-          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Effectively work and collaborate in an in-office or on-site setting."
-            data-bs-placement="bottom">Office</span>
-
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Collaborate effectively with colleagues to achieve common goals." data-bs-placement="bottom">Teamwork</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Effectively work and collaborate in an in-office or on-site setting." data-bs-placement="bottom">Office</span>
+          
         </div>
       </div>
-
+      
       <div class="my-3 card" style="background-color: var(--card-header);color: var(--text-color);">
         <div class="card-header">
           <div class="row align-items-center justify-content-center">
@@ -303,175 +401,193 @@
             <span class="text-secondary">Responsible for :</span>
           </div>
           <ul>
-
+            
             <li>Manage all accounting transactions and enter general ledger journal entries to the ERP odoo system.</li>
-
+            
           </ul>
         </div>
         <div class="card-footer text-body-secondary" style="background-color: var(--card-footer)">
-
-          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Manage and execute key changes without disrupting operations." data-bs-placement="bottom">Critical
-            Transitions</span>
-
-          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Handle tasks effectively to balance productivity and efficiency."
-            data-bs-placement="bottom">Workload</span>
-
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Manage and execute key changes without disrupting operations." data-bs-placement="bottom">Critical Transitions</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Handle tasks effectively to balance productivity and efficiency." data-bs-placement="bottom">Workload</span>
+          
           <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Maintain structured and efficient task management." data-bs-placement="bottom">Task Organization</span>
-
-          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Prioritize and allocate time effectively to meet objectives." data-bs-placement="bottom">Time
-            Management</span>
-
-          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Effectively work and collaborate in an in-office or on-site setting."
-            data-bs-placement="bottom">Office</span>
-
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Prioritize and allocate time effectively to meet objectives." data-bs-placement="bottom">Time Management</span>
+          
+          <span class="badge skill-badge text-black" style="background-color: var(--button-color-light)" data-bs-toggle="tooltip" data-bs-title="Effectively work and collaborate in an in-office or on-site setting." data-bs-placement="bottom">Office</span>
+          
         </div>
       </div>
-
+         
     </div>
 
     <div class="section-divider"></div>
 
     <div id="skills" class="text-center">
-
+      
       <h3 class="my-3 fw-bold">Tech Skills</h3>
-      <div class="my-3">
+      <div class="my-3 p-4 border rounded-4 shadow-sm" style="border-color: var(--border-color); background-color: var(--card-header);">
         <div class="row align-items-center justify-content-center gap-3">
-
-          <div class="col rounded p-1 bg-white">
-            <a href="https://www.python.org/" target="_blank" class="link-underline-opacity-0 link-success">
-              <img style="height: 50px" src="./assets/icons/python.svg" alt="Python" />
+          
+          <div class="col-auto rounded-3 p-2 bg-white border tech-card" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
+            <a href="https://www.python.org/" target="_blank" class="link-underline-opacity-0" title="Python">
+              <img style="max-height: 80px; max-width: 80px;" src="./assets/icons/python.svg" alt="Python" />
             </a>
           </div>
-
-          <div class="col rounded p-1 bg-white">
-            <a href="https://www.djangoproject.com/" target="_blank" class="link-underline-opacity-0 link-success">
-              <img style="height: 50px" src="./assets/icons/django.svg" alt="Django" />
+          
+          <div class="col-auto rounded-3 p-2 bg-white border tech-card" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
+            <a href="https://www.djangoproject.com/" target="_blank" class="link-underline-opacity-0" title="Django">
+              <img style="max-height: 80px; max-width: 80px;" src="./assets/icons/django.svg" alt="Django" />
             </a>
           </div>
-
-          <div class="col rounded p-1 bg-white">
-            <a href="https://www.django-rest-framework.org/" target="_blank" class="link-underline-opacity-0 link-success">
-              <img style="height: 50px" src="./assets/icons/djangorest.png" alt="Django Rest Framework" />
+          
+          <div class="col-auto rounded-3 p-2 bg-white border tech-card" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
+            <a href="https://www.django-rest-framework.org/" target="_blank" class="link-underline-opacity-0" title="Django Rest Framework">
+              <img style="max-height: 80px; max-width: 80px;" src="./assets/icons/djangorest.png" alt="Django Rest Framework" />
             </a>
           </div>
-
-          <div class="col rounded p-1 bg-white">
-            <a href="https://htmx.org/" target="_blank" class="link-underline-opacity-0 link-success">
-              <img style="height: 50px" src="./assets/icons/htmx.png" alt="HTMX" />
+          
+          <div class="col-auto rounded-3 p-2 bg-white border tech-card" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
+            <a href="https://htmx.org/" target="_blank" class="link-underline-opacity-0" title="HTMX">
+              <img style="max-height: 80px; max-width: 80px;" src="./assets/icons/htmx.png" alt="HTMX" />
             </a>
           </div>
-
-          <div class="col rounded p-1 bg-white">
-            <a href="https://www.javascript.com/" target="_blank" class="link-underline-opacity-0 link-success">
-              <img style="height: 50px" src="./assets/icons/js.png" alt="JavaScript" />
+          
+          <div class="col-auto rounded-3 p-2 bg-white border tech-card" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
+            <a href="https://www.javascript.com/" target="_blank" class="link-underline-opacity-0" title="JavaScript">
+              <img style="max-height: 80px; max-width: 80px;" src="./assets/icons/js.png" alt="JavaScript" />
             </a>
           </div>
-
-          <div class="col rounded p-1 bg-white">
-            <a href="https://react.dev/" target="_blank" class="link-underline-opacity-0 link-success">
-              <img style="height: 50px" src="./assets/icons/react.svg" alt="React" />
+          
+          <div class="col-auto rounded-3 p-2 bg-white border tech-card" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
+            <a href="https://react.dev/" target="_blank" class="link-underline-opacity-0" title="React">
+              <img style="max-height: 80px; max-width: 80px;" src="./assets/icons/react.svg" alt="React" />
             </a>
           </div>
-
-          <div class="col rounded p-1 bg-white">
-            <a href="https://html.spec.whatwg.org/" target="_blank" class="link-underline-opacity-0 link-success">
-              <img style="height: 50px" src="./assets/icons/html.png" alt="HTML" />
+          
+          <div class="col-auto rounded-3 p-2 bg-white border tech-card" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
+            <a href="https://html.spec.whatwg.org/" target="_blank" class="link-underline-opacity-0" title="HTML">
+              <img style="max-height: 80px; max-width: 80px;" src="./assets/icons/html.png" alt="HTML" />
             </a>
           </div>
-
-          <div class="col rounded p-1 bg-white">
-            <a href="https://www.w3.org/Style/CSS/" target="_blank" class="link-underline-opacity-0 link-success">
-              <img style="height: 50px" src="./assets/icons/css.png" alt="CSS" />
+          
+          <div class="col-auto rounded-3 p-2 bg-white border tech-card" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
+            <a href="https://www.w3.org/Style/CSS/" target="_blank" class="link-underline-opacity-0" title="CSS">
+              <img style="max-height: 80px; max-width: 80px;" src="./assets/icons/css.png" alt="CSS" />
             </a>
           </div>
-
-          <div class="col rounded p-1 bg-white">
-            <a href="https://getbootstrap.com/" target="_blank" class="link-underline-opacity-0 link-success">
-              <img style="height: 50px" src="./assets/icons/bootstrap.png" alt="Bootstrap" />
+          
+          <div class="col-auto rounded-3 p-2 bg-white border tech-card" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
+            <a href="https://getbootstrap.com/" target="_blank" class="link-underline-opacity-0" title="Bootstrap">
+              <img style="max-height: 80px; max-width: 80px;" src="./assets/icons/bootstrap.png" alt="Bootstrap" />
             </a>
           </div>
-
-          <div class="col rounded p-1 bg-white">
-            <a href="https://www.mysql.com/" target="_blank" class="link-underline-opacity-0 link-success">
-              <img style="height: 50px" src="./assets/icons/mysql.png" alt="MySQL" />
+          
+          <div class="col-auto rounded-3 p-2 bg-white border tech-card" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
+            <a href="https://www.mysql.com/" target="_blank" class="link-underline-opacity-0" title="MySQL">
+              <img style="max-height: 80px; max-width: 80px;" src="./assets/icons/mysql.png" alt="MySQL" />
             </a>
           </div>
-
-          <div class="col rounded p-1 bg-white">
-            <a href="https://www.postgresql.org/" target="_blank" class="link-underline-opacity-0 link-success">
-              <img style="height: 50px" src="./assets/icons/postgresq.svg" alt="PostgreSQL" />
+          
+          <div class="col-auto rounded-3 p-2 bg-white border tech-card" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
+            <a href="https://www.postgresql.org/" target="_blank" class="link-underline-opacity-0" title="PostgreSQL">
+              <img style="max-height: 80px; max-width: 80px;" src="./assets/icons/postgres.png" alt="PostgreSQL" />
             </a>
           </div>
-
-          <div class="col rounded p-1 bg-white">
-            <a href="https://www.gnu.org/software/bash/" target="_blank" class="link-underline-opacity-0 link-success">
-              <img style="height: 50px" src="./assets/icons/bash.svg" alt="BASH" />
+          
+          <div class="col-auto rounded-3 p-2 bg-white border tech-card" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
+            <a href="https://www.gnu.org/software/bash/" target="_blank" class="link-underline-opacity-0" title="BASH">
+              <img style="max-height: 80px; max-width: 80px;" src="./assets/icons/bash.svg" alt="BASH" />
             </a>
           </div>
-
-          <div class="col rounded p-1 bg-white">
-            <a href="https://www.odoo.com/" target="_blank" class="link-underline-opacity-0 link-success">
-              <img style="height: 50px" src="./assets/icons/odoo.png" alt="Odoo" />
+          
+          <div class="col-auto rounded-3 p-2 bg-white border tech-card" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
+            <a href="https://www.odoo.com/" target="_blank" class="link-underline-opacity-0" title="Odoo">
+              <img style="max-height: 80px; max-width: 80px;" src="./assets/icons/odoo.png" alt="Odoo" />
             </a>
           </div>
-
-          <div class="col rounded p-1 bg-white">
-            <a href="https://www.docker.com/" target="_blank" class="link-underline-opacity-0 link-success">
-              <img style="height: 50px" src="./assets/icons/docker.png" alt="Docker" />
+          
+          <div class="col-auto rounded-3 p-2 bg-white border tech-card" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
+            <a href="https://www.docker.com/" target="_blank" class="link-underline-opacity-0" title="Docker">
+              <img style="max-height: 80px; max-width: 80px;" src="./assets/icons/docker.png" alt="Docker" />
             </a>
           </div>
-
-          <div class="col rounded p-1 bg-white">
-            <a href="https://git-scm.com/" target="_blank" class="link-underline-opacity-0 link-success">
-              <img style="height: 50px" src="./assets/icons/git.png" alt="Git" />
+          
+          <div class="col-auto rounded-3 p-2 bg-white border tech-card" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
+            <a href="https://git-scm.com/" target="_blank" class="link-underline-opacity-0" title="Git">
+              <img style="max-height: 80px; max-width: 80px;" src="./assets/icons/git.png" alt="Git" />
             </a>
           </div>
-
+          
+          <div class="col-auto rounded-3 p-2 bg-white border tech-card" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
+            <a href="https://www.jenkins.io/" target="_blank" class="link-underline-opacity-0" title="Jenkins">
+              <img style="max-height: 80px; max-width: 80px;" src="./assets/icons/jenkins.svg" alt="Jenkins" />
+            </a>
+          </div>
+          
+          <div class="col-auto rounded-3 p-2 bg-white border tech-card" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
+            <a href="https://kubernetes.io/" target="_blank" class="link-underline-opacity-0" title="kubernetes">
+              <img style="max-height: 80px; max-width: 80px;" src="./assets/icons/kubernetes.png" alt="kubernetes" />
+            </a>
+          </div>
+          
         </div>
       </div>
-
+      
 
       <div class="section-divider"></div>
 
-
+      
       <h3 class="my-3 fw-bold">Skills</h3>
       <div class="my-3">
-
+         
         <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Maintain legacy code to keep old systems running efficiently.">Legacy Code</span>
-
+        
         <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Improve and restructure code without disrupting business workflows.">Refactor</span>
-
+        
         <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Handle tasks effectively to balance productivity and efficiency.">Workload</span>
-
+        
         <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Deliver work on time while maintaining quality standards.">Deadlines</span>
-
+        
         <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Collaborate effectively with colleagues to achieve common goals.">Teamwork</span>
-
+        
         <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Adapt to both remote and in-office work environments seamlessly.">Hybrid</span>
-
+        
         <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Develop structured plans to streamline workflow and decision-making.">Planning</span>
-
+        
         <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Effectively work and collaborate in an in-office or on-site setting.">Office</span>
-
+        
         <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Enhance processes to improve performance and reduce inefficiencies.">Workflow Optimizer</span>
-
+        
         <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Manage and execute key changes without disrupting operations.">Critical Transitions</span>
-
+        
         <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Prioritize and allocate time effectively to meet objectives.">Time Management</span>
-
+        
         <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Maintain structured and efficient task management.">Task Organization</span>
-
+        
+        <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Design and build systems that grow efficiently with business needs.">Scalability</span>
+        
+        <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Deliver value through iterative development and collaborative workflows.">Agile</span>
+        
+        <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Ensure code quality and knowledge sharing through thorough peer reviews.">Code Reviewer</span>
+        
+        <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Take full responsibility for features from conception to production support.">Ownership</span>
+        
+        <span class="badge skill-badge m-1 p-2" style="background-color: var(--button-color-dark)" data-bs-toggle="tooltip" data-bs-title="Manage containerized environments and automated delivery pipelines.">DevOps</span>
+           
       </div>
-
+      
     </div>
 
     <div class="section-divider"></div>
 
     <div id="projects" class="text-start">
-
+      
       <h3 class="my-3 fw-bold">Projects</h3>
       <div class="row">
-
+        
         <div class="col-12">
           <div class="card shadow-sm mb-3" style="background-color: var(--card-header);color: var(--text-color);">
             <div class="card-header">
@@ -480,11 +596,11 @@
 
             <div class="card-body" style="background-color: var(--card-body)">
               <div class="mb-3">
-
+                
                 <span class="badge" style="background-color: var(--button-color-dark)">Django</span>
-
+                
                 <span class="badge" style="background-color: var(--button-color-dark)">HTMX</span>
-
+                
               </div>
               <p class="card-text">If you&#x27;re still collecting food orders manually, it&#x27;s time to try Orders Manager!</p>
             </div>
@@ -496,7 +612,7 @@
             </div>
           </div>
         </div>
-
+        
         <div class="col-12">
           <div class="card shadow-sm mb-3" style="background-color: var(--card-header);color: var(--text-color);">
             <div class="card-header">
@@ -505,11 +621,11 @@
 
             <div class="card-body" style="background-color: var(--card-body)">
               <div class="mb-3">
-
+                
                 <span class="badge" style="background-color: var(--button-color-dark)">Django</span>
-
+                
                 <span class="badge" style="background-color: var(--button-color-dark)">React</span>
-
+                
               </div>
               <p class="card-text">Tired of boring quizzes? With Darajaty, every question you answer, add, or review comes with rewards! Make learning engaging and fun.</p>
             </div>
@@ -521,7 +637,7 @@
             </div>
           </div>
         </div>
-
+        
         <div class="col-12">
           <div class="card shadow-sm mb-3" style="background-color: var(--card-header);color: var(--text-color);">
             <div class="card-header">
@@ -530,9 +646,9 @@
 
             <div class="card-body" style="background-color: var(--card-body)">
               <div class="mb-3">
-
+                
                 <span class="badge" style="background-color: var(--button-color-dark)">Django</span>
-
+                
               </div>
               <p class="card-text">Simple Url Shortener to cut long urls</p>
             </div>
@@ -544,16 +660,16 @@
             </div>
           </div>
         </div>
-
+        
       </div>
-
+      
     </div>
 
     <div class="section-divider"></div>
     <div id="education" class="text-center">
-
+      
       <h3 class="my-3 fw-bold">Education</h3>
-
+      
       <div class="my-3 card" style="background-color: var(--card-header);color: var(--text-color);">
         <div class="card-header">
           <div class="row align-items-center justify-content-center">
@@ -573,19 +689,19 @@
             <span class="text-secondary">Subjects :</span>
           </div>
           <ul>
-
+            
             <li>Programming Fundamentals.</li>
-
+            
             <li>Intro to Web Development + hands on experience.</li>
-
+            
             <li>Advanced topics and tips for Web Development optimizations</li>
-
+            
             <li>Graduation Project + project for every sub track.</li>
-
+            
           </ul>
         </div>
       </div>
-
+      
       <div class="my-3 card" style="background-color: var(--card-header);color: var(--text-color);">
         <div class="card-header">
           <div class="row align-items-center justify-content-center">
@@ -605,21 +721,21 @@
             <span class="text-secondary">Subjects :</span>
           </div>
           <ul>
-
+            
             <li>Accounting &amp; Finance.</li>
-
+            
             <li>Business &amp; Management.</li>
-
+            
             <li>Economics.</li>
-
+            
           </ul>
         </div>
       </div>
-
+       
       <div class="section-divider"></div>
-
+       
       <h3 class="my-3 fw-bold">Certificates</h3>
-
+      
       <div class="my-3 card" style="background-color: var(--card-header);color: var(--text-color);">
         <div class="card-header">
           <div class="row align-items-center justify-content-center">
@@ -639,15 +755,15 @@
             <span class="text-secondary">Subjects :</span>
           </div>
           <ul>
-
+            
             <li>React Fundamentals.</li>
-
+            
             <li>Advanced tips and tricks.</li>
-
+            
           </ul>
         </div>
       </div>
-
+      
       <div class="my-3 card" style="background-color: var(--card-header);color: var(--text-color);">
         <div class="card-header">
           <div class="row align-items-center justify-content-center">
@@ -667,15 +783,15 @@
             <span class="text-secondary">Subjects :</span>
           </div>
           <ul>
-
+            
             <li>Dart &amp; Flutter Fundamentals.</li>
-
+            
             <li>4 Hands on projects.</li>
-
+            
           </ul>
         </div>
       </div>
-
+      
       <div class="my-3 card" style="background-color: var(--card-header);color: var(--text-color);">
         <div class="card-header">
           <div class="row align-items-center justify-content-center">
@@ -695,69 +811,107 @@
             <span class="text-secondary">Subjects :</span>
           </div>
           <ul>
-
+            
             <li>Advanced Accounting.</li>
-
+            
           </ul>
         </div>
       </div>
-
+         
     </div>
 
     <div class="section-divider"></div>
     <div id="contact" class="text-center">
-
-      <h3 class="my-3 fw-bold">Contact Information</h3>
-      <div class="row align-items-center justify-content-center">
-
-        <div class="col-10 col-md-5 card m-1" style="background-color: var(--card-header);">
-          <a href="tel:+201015434803" class="link-underline link-underline-opacity-0" style="color: var(--text-color);">
-            <i class="fa-solid fa-phone fa-2xl m-5" style="color: #1ae03e;"></i>
-            <br />
-            <span class="text-break">+20-101-543-4803</span>
+      
+      <h3 class="my-5 fw-bold">Contact Information</h3>
+      <div class="row g-4 justify-content-center">
+        
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a href="tel:+201015434803" target="_blank" class="card h-100 contact-card p-4 shadow-sm" style="background-color: var(--card-header); border: none;">
+            <div class="d-flex align-items-center gap-3">
+              <div class="rounded-circle p-3 d-flex align-items-center justify-content-center" style="background-color: var(--body-color); width: 60px; height: 60px;">
+                <i class="fa-solid fa-phone fa-2xl" style="color: #1ae03e; font-size: 1.5rem;"></i>
+              </div>
+              <div class="text-start">
+                <div class="text-break fw-bold" style="color: var(--text-color);">+20-101-543-4803</div>
+              </div>
+            </div>
           </a>
         </div>
-
-        <div class="col-10 col-md-5 card m-1" style="background-color: var(--card-header);">
-          <a href="mailto:hosamhamdy258@gmail.com" class="link-underline link-underline-opacity-0" style="color: var(--text-color);">
-            <i class="fa-solid fa-envelope fa-2xl m-5" style="color: #a82a2a;"></i>
-            <br />
-            <span class="text-break">hosamhamdy258@gmail.com</span>
+        
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a href="mailto:hosamhamdy258@gmail.com" target="_blank" class="card h-100 contact-card p-4 shadow-sm" style="background-color: var(--card-header); border: none;">
+            <div class="d-flex align-items-center gap-3">
+              <div class="rounded-circle p-3 d-flex align-items-center justify-content-center" style="background-color: var(--body-color); width: 60px; height: 60px;">
+                <i class="fa-solid fa-envelope fa-2xl" style="color: #a82a2a; font-size: 1.5rem;"></i>
+              </div>
+              <div class="text-start">
+                <div class="text-break fw-bold" style="color: var(--text-color);">hosamhamdy258@gmail.com</div>
+              </div>
+            </div>
           </a>
         </div>
-
-        <div class="col-10 col-md-5 card m-1" style="background-color: var(--card-header);">
-          <a href="https://github.com/hosamhamdy258" class="link-underline link-underline-opacity-0" style="color: var(--text-color);">
-            <i class="fa-brands fa-github fa-2xl m-5" style="color: #000000;;"></i>
-            <br />
-            <span class="text-break">github.com/hosamhamdy258</span>
+        
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a href="https://github.com/hosamhamdy258" target="_blank" class="card h-100 contact-card p-4 shadow-sm" style="background-color: var(--card-header); border: none;">
+            <div class="d-flex align-items-center gap-3">
+              <div class="rounded-circle p-3 d-flex align-items-center justify-content-center" style="background-color: var(--body-color); width: 60px; height: 60px;">
+                <i class="fa-brands fa-github fa-2xl" style="color: #000000;; font-size: 1.5rem;"></i>
+              </div>
+              <div class="text-start">
+                <div class="text-break fw-bold" style="color: var(--text-color);">github.com/hosamhamdy258</div>
+              </div>
+            </div>
           </a>
         </div>
-
-        <div class="col-10 col-md-5 card m-1" style="background-color: var(--card-header);">
-          <a href="https://www.linkedin.com/in/hossamhamdy94/" class="link-underline link-underline-opacity-0" style="color: var(--text-color);">
-            <i class="fa-brands fa-linkedin fa-2xl m-5" style="color: #0a66c2;"></i>
-            <br />
-            <span class="text-break">linkedin.com/in/hossamhamdy94</span>
+        
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a href="https://www.linkedin.com/in/hossamhamdy94/" target="_blank" class="card h-100 contact-card p-4 shadow-sm" style="background-color: var(--card-header); border: none;">
+            <div class="d-flex align-items-center gap-3">
+              <div class="rounded-circle p-3 d-flex align-items-center justify-content-center" style="background-color: var(--body-color); width: 60px; height: 60px;">
+                <i class="fa-brands fa-linkedin fa-2xl" style="color: #0a66c2; font-size: 1.5rem;"></i>
+              </div>
+              <div class="text-start">
+                <div class="text-break fw-bold" style="color: var(--text-color);">linkedin.com/in/hossamhamdy94</div>
+              </div>
+            </div>
           </a>
         </div>
-
-        <div class="col-10 col-md-5 card m-1" style="background-color: var(--card-header);">
-          <a href="https://dev-hosamhamdy.github.io" class="link-underline link-underline-opacity-0" style="color: var(--text-color);">
-            <i class="fa-solid fa-globe fa-2xl m-5" style="color: #63E6BE;"></i>
-            <br />
-            <span class="text-break">dev-hosamhamdy.github.io</span>
+        
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a href="https://blog.hossamhamdy.com/" target="_blank" class="card h-100 contact-card p-4 shadow-sm" style="background-color: var(--card-header); border: none;">
+            <div class="d-flex align-items-center gap-3">
+              <div class="rounded-circle p-3 d-flex align-items-center justify-content-center" style="background-color: var(--body-color); width: 60px; height: 60px;">
+                <i class="fa-solid fa-blog fa-2xl" style="color: #74c1fc; font-size: 1.5rem;"></i>
+              </div>
+              <div class="text-start">
+                <div class="text-break fw-bold" style="color: var(--text-color);">Personal Blog</div>
+              </div>
+            </div>
           </a>
         </div>
-
+        
+        <div class="col-12 col-sm-6 col-lg-4">
+          <a href="https://www.youtube.com/@programmerrandoms" target="_blank" class="card h-100 contact-card p-4 shadow-sm" style="background-color: var(--card-header); border: none;">
+            <div class="d-flex align-items-center gap-3">
+              <div class="rounded-circle p-3 d-flex align-items-center justify-content-center" style="background-color: var(--body-color); width: 60px; height: 60px;">
+                <i class="fa-brands fa-youtube fa-2xl" style="color: #ff0033; font-size: 1.5rem;"></i>
+              </div>
+              <div class="text-start">
+                <div class="text-break fw-bold" style="color: var(--text-color);">Youtube Channel</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        
       </div>
-
+      
     </div>
   </div>
 
   <footer class="py-4 bg-black bg-opacity-25 text-center my-3">
     <div>
-      <small>&copy; Hossam Hamdy 2025. All rights reserved.</small>
+      <small>&copy; Hossam Hamdy 2026. All rights reserved.</small>
     </div>
   </footer>
 
